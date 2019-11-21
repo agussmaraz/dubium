@@ -108,6 +108,100 @@ body {
 .input--avatar {
     margin-left: 1em;
 }
+/*----------------CONTACTO----------------*/ 
+
+.sec--contacto{
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+}
+.p--contacto{
+    font-size: 3em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    color: #D88E4E;
+    text-align: center;
+}
+.caja--contacto{
+    margin: 0 auto;
+    background-color: #694872;
+    border-radius: 30px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 2em;
+}
+
+.p--caja{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 1.3em;
+}
+
+.caja--contactenos{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 3em auto;
+}
+
+.b_contactenos{
+    width: 100%;
+    font-size: 1.5em;
+    padding: 5px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    background-color: #A0D8C8;
+    color: white;
+    border: solid white 2px;
+    border-radius: 8px; 
+}
+/*--------Nosotros formulario--------*/
+.formulario--nosotros{
+    margin: 0 auto;
+    border-radius: 30px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #694872;
+    margin: 3em auto;
+}
+.form--nosotros{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.p--nosotros{
+    color: white;
+    margin-top: 1em;
+    margin-bottom: 10px;
+    font-size: 1.7em;
+}
+.in--nosotros{
+    width: 70%;
+    border-radius: 10px;
+    text-align: center; 
+    
+}
+.b_nosotros{
+    font-size: 1.5em;
+    padding: 1px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    color: white;
+    background-color: #A0D8C8 ;
+    border: solid white 2px;
+    border-radius: 8px;
+    width: 5em;
+    height: 2em;
+    
+}
+
 
 /* ---------------Footer----------------- */
 

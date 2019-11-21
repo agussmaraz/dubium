@@ -1,0 +1,20 @@
+#D85F75	Rosa
+#A0D8C8 	Celeste
+#D88E4E	Naranja
+#694872	Violeta
+#2C263F 	Violeta oscuro (Fondo)
+
+
+Padding	16px/1em
+Roboto	Bold
+Borde 	4px
+
+
+    Home - Con información general del proyecto
+    F.A.Q. - Preguntas frecuentes
+    Formulario de Registro - Visual, pero no funcional
+    Formulario de Login - Visual, pero no funcional
+    Formulario de Contacto - Visual, pero no funcional
+    Perfil de Usuario
+    Vista panel de administrar preguntas - A/B/M.
+    Vista de ranking de usuarios
