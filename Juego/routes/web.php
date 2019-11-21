@@ -31,7 +31,9 @@ Route::get('/contacto' , function (){
 Route::get('/nosotros', function (){
     return view('nosotros');
 });
-
+Route::get('/perfil' , function (){
+    return view('perfil');
+});
 
 Auth::routes();
 
