@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/verPreguntas', 'PreguntasController@show');
 Route::get('/verRespuestas', 'RespuestaController@show');
 Route::get('/juego/{id}', 'PreguntasController@detalle');
-Route::get('/agregarPreguntas', 'PreguntasController@agregarPreguntas');
+Route::get('/crea', 'PreguntasController@agregarPreguntas');
 Route::post('/agregarPreguntas', 'PreguntasController@agregar')->name('agregarPreguntas');
 Route::get('/usuarios', 'UsuarioController@show');
 //Creo ruta de registro que simplemente llama ala vista, despues hacemos la logica...

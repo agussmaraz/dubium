@@ -30,7 +30,7 @@ class PreguntasController extends Controller
 
     public function agregarPreguntas()
     {
-        return view('agregarPreguntas');
+        return view('crea');
     }
 
 
@@ -50,6 +50,6 @@ class PreguntasController extends Controller
 
         $nuevaPregunta->save();
 
-        return redirect('/agregarPreguntas');
+        return redirect('/crea');
     }
 }
