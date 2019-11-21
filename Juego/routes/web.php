@@ -24,7 +24,15 @@ Route::get('/juego/{id}', 'PreguntasController@detalle');
 Route::get('/crea', 'PreguntasController@agregarPreguntas');
 Route::post('/agregarPreguntas', 'PreguntasController@agregar')->name('agregarPreguntas');
 Route::get('/usuarios', 'UsuarioController@show');
-//Creo ruta de registro que simplemente llama ala vista, despues hacemos la logica...
-Route::get('/registro' , function (){
-    return view('registro');
+//Tomi: Creo rutas para nosotros y contacto que por el momento solo retornan una vista
+Route::get('/contacto' , function (){
+    return view('contacto');
 });
+Route::get('/nosotros', function (){
+    return view('nosotros');
+});
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
