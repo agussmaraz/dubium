@@ -23,8 +23,6 @@
         .full-height {
             height: 70vh;
         }
-        3.
-        
         .flex-center {
             align-items: center;
             display: flex;
@@ -36,9 +34,11 @@
         }
         
         .top-right {
-            position: absolute;
+            position: static;
             /* right: 10px; */
-            top: 18px;
+            /* top: 18px; */
+            margin-top: 10px;
+            text-align: center;
             /* background-color: #636b6f;
             height: 50px;
             width: 600px */
@@ -50,6 +50,7 @@
         
         .title {
             font-size: 84px;
+            margin-top: 100px;
             
         }
         .links > a {
