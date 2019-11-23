@@ -465,6 +465,88 @@ body {
     height: 2em;
     
 }
+/* --------------FAQ----------------- */
+
+.FAQ--grilla{
+    display: grid;
+    grid-template-rows: auto;
+    grid-row-gap: 3em; 
+}
+
+.titulo--frecuentes{
+    color: #D88E4E;
+    margin-top: 1em;
+    font-size: 3em;
+    text-align: center;
+}
+.Primer--div{
+    background: #694872;
+    width: 60%;
+    border-radius: 30px;
+    margin: 0 auto;
+    padding: 0.2em;
+}
+.p--dubium{
+    font-size: 1.9em;
+    color: #D85F75;
+    text-decoration: underline;
+    text-align: center;
+}
+.primera--info {
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+}
+.Segundo--div{
+    background: #694872;
+    width: 60%;
+    border-radius: 30px;
+    margin: 0 auto;
+    padding: 0.2em;
+}
+.p-info {
+    font-size: 1.9em;
+    color: #A0D8C8;
+    text-decoration: underline;
+    text-align: center;
+}
+.segunda--info {
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+}
+.FAQ--tema{
+    color: #D85F75;
+    font-size: 1.9em;
+    text-decoration: underline;
+    text-align: center;
+}
+.FAQ--ahorcado{
+    color: #A0D8C8;
+    font-size: 1.9em;
+    text-decoration: underline;
+    text-align: center;
+}
+.FAQ--muerte{
+    color: #D88E4E;
+    font-size: 1.9em;
+    text-decoration: underline;
+    text-align: center;
+}
+.FAQ--Info{
+    color: white;
+    background: #694872;
+    border-radius: 30px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.5em;
+    font-size: 1.2em;
+    text-align: center;
+}
+.FAQ--footer{
+    padding: 0.5em;
+    margin-top: 1em;
+}
 
 
 /* ---------------Footer----------------- */

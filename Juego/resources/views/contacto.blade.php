@@ -37,5 +37,5 @@
                 <p>Enviar</p>
             </button></center>
     </form>
-</section>
+
 @endsection
