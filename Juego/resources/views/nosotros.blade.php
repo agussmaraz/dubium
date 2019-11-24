@@ -1,6 +1,6 @@
 @extends('layouts.plantillaA')
 @section('contenido')
-<section class="container">
+<section class="contenedor">
 <section class="sec--contacto">
     <p class="p--contacto">
         Nosotros

@@ -1,6 +1,6 @@
 @extends('layouts.plantillaA')
 @section('contenido')
-<section class="container">
+<section class="contenedor">
    
     <form class="formulario--nosotros" action="#" method="POST">
         <div class="form--nosotros">
