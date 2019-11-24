@@ -24,6 +24,66 @@ body {
     background-color: #2C263F !important;
 }
 
+/*------ Index -------*/
+
+.content{
+height: 100vh;
+}
+
+#logo{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    animation: fill 4s ease forwards;
+    cursor: pointer;
+}
+#subtitulo{
+    position: absolute;
+    color: white;
+    top: 50%;
+}
+#logo path{
+    stroke-dasharray: 6354.38232421875;
+    stroke-dashoffset: 6354.38232421875;
+    animation: line-anim 8s ease forwards;
+}
+
+@keyframes line-anim{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes fill {
+    from{
+        fill: transparent;
+    }
+    to{
+        fill: white;
+    }
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 10px 30px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #A0D8C8;
+    border-radius: 20px;
+}
+.top-right{
+    position: absolute;
+    top: 10%;
+    right: 2%;
+}
+
+
+
+
 /*---------- registro.php --------- */
 .sec-regis{
     display: flex;
