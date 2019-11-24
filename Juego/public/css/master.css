@@ -295,13 +295,14 @@ body {
 .e-crud {
     color: #2C263F;
 }
+/* --------------Raking----------- */
 .cajamadre--ranking {
     display: flex;
 }
 .caja1--ranking{
     border-radius: 30px;
-    width: 50%;
-    height: 400px;
+    width: 40%;
+    height: 50%;
     margin: 40px;
     background-color: #694872;
     padding: 0;
@@ -323,20 +324,16 @@ body {
 .nombres--ranking {
     font-size: 1.7em;
     font-weight: bold;
+    text-align: center;
 }
 .user1 {
     color: #D85F75;
 }
-.user2 {
-    color:#A0D8C8;
-    
-}
-.user3 {
-    color: #D88E4E;
-}
 .numeros--ranking {
-    margin-left: 7em;
+    /* margin-left: 10em; */
     color: white;
+    text-align: center;
+    font-size: 1.5em;
 }
 /* ---------------Usuario----------------- */
 
@@ -465,12 +462,86 @@ body {
     height: 2em;
     
 }
+/* ---------------Juego----------------- */
+.cajita-juego {
+    color: white;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    width: 50em;
+    margin: 5% auto;
+    border-radius: 30px;
+    padding: 10px;
+}
+.pregunta-juego {
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 2.5em;
+    padding: 10px;
+    overflow-wrap:	break-word;
+    /* background-color: #D85F75; */
+}
+.respuesta-juegoA {
+    font-size: 2em;
+    overflow-wrap:	break-word;
+    word-break:	normal;
+    background-color: #DF8B8B;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+}
+.respuesta-juegoB {
+    font-size: 2em;
+    overflow-wrap:	break-word;
+    background-color: #D88E4E ;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+}
+.respuesta-juegoC {
+    font-size: 2em;
+    overflow-wrap:	break-word;
+    background-color: #A0D8C8;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+}
+.small-juego {
+    color: white;
+    text-align: center;
+}
+.cajita-puntos {
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ---------------Footer----------------- */
 
 footer {
     color: white;
+    text-align: center;
 }
 .copy {
     color: white;

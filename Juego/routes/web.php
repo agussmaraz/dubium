@@ -18,12 +18,23 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/verPreguntas', 'PreguntasController@show');
-Route::get('/verRespuestas', 'RespuestaController@show');
-Route::get('/juego/{id}', 'PreguntasController@detalle');
-Route::get('/crea', 'PreguntasController@agregarPreguntas');
-Route::post('/agregarPreguntas', 'PreguntasController@agregar')->name('agregarPreguntas');
-Route::get('/usuarios', 'UsuarioController@show');
+
+// Agus - Pruebas de si te traen las preguntas, las respuestas y los usuarios
+// Route::get('/verPreguntas', 'PreguntasController@show');
+// Route::get('/verRespuestas', 'RespuestaController@show');
+// Route::get('/usuarios', 'UsuarioController@show');
+
+// Agus - Modelo del juego, por el momento se llaman a las preguntas segun el id
+Route::post('/respuesta', 'PreguntasController@siguiente');
+Route::get('/juego', 'PreguntasController@view');
+// Route::post('/juego', 'PreguntasController@detalle')->name('juego');
+
+//Ruta para el crud
+Route::get('/crea', 'PreguntasController@crud');
+// Ruta para el formulario de agregar preguntas
+Route::post('/crea', 'PreguntasController@agregar')->name('agregarPreguntas');
+
+
 //Tomi: Creo rutas para nosotros y contacto que por el momento solo retornan una vista
 Route::get('/contacto' , function (){
     return view('contacto');
@@ -31,9 +42,7 @@ Route::get('/contacto' , function (){
 Route::get('/nosotros', function (){
     return view('nosotros');
 });
-Route::get('/perfil' , function (){
-    return view('perfil');
-});
+Route::get('/perfil' , 'UsuarioController@show');
 
 Auth::routes();
 

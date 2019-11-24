@@ -4,17 +4,18 @@
     <article>
         <p class="titulo--crea"> Creá tus propias preguntas! </p>
         <form action="" method="post" class="contenedor--form">
+            @csrf
             <div class="cajas--form">
                 <h3 class="subtitulos--crea1"> Escribi tu pregunta: </h3>
                 <input type="text" name="pregunta" class="preguntainput--crea">
             </div>
             <div class="cajas--form">
                 <h3 class="subtitulos--crea2"> Escribi la respuesta: </h3>
-                <input type="text" name="respuesta1" placeholder="Escribi una respuesta" class="respuesta--crea">
+                <input type="text" name="correcta" placeholder="Escribi una respuesta" class="respuesta--crea">
                 <br>
-                <input type="text" name="respuestaCorrecta" placeholder="Escribi la respuesta correcta" class="respuesta--crea">
+                <input type="text" name="falsa1" placeholder="Escribi la respuesta correcta" class="respuesta--crea">
                 <br>
-                <input type="text" name="respuesta2" placeholder="Escribi una respuesta" class="respuesta--crea">
+                <input type="text" name="falsa2" placeholder="Escribi una respuesta" class="respuesta--crea">
                 
                 <input type="submit" value="Guardar" class="boton--crea">
                 
@@ -42,22 +43,21 @@
                 </tr>
             </thead>
             <tbody>
-                <?php if (isset($_SESSION['id'])) : ?>
-                <?php $id = $_SESSION['id'];
-                $consultaPregunta = BaseDato::consultar('*', 'preguntas, respuestas', "preguntas.usuario_id = '$id' and preguntas.respuesta_id = respuestas.id");
-                ?>
-                <?php foreach ($consultaPregunta as $key => $value) : ?>
-                <tr>
-                    <th scope="row"><?= $value['pregunta']; ?></th>
-                    <td><?= $value['correcta']; ?></td>
-                    <td><?= $value['falsa1']; ?></td>
-                    <td><?= $value['falsa2'] ?></td>
-                    <?php $pregunta = $value['id']; ?>
-                    <td> <a href="editar.php?pregunta=<?= $pregunta; ?>"><i class="fas fa-edit"></i></a>
-                        <a href="eliminar.php?pregunta=<?= $pregunta; ?>"><i class="fas fa-trash"></i></a></td>
-                        <?php endforeach; ?>
-                        <?php endif; ?>
+                
+                @foreach($preguntas as $pregunta)
+                    <tr>
+                    <td scope="row"> 
+                        {{$pregunta['pregunta']}}
+                    </td>
+                    <td>{{$pregunta->Respuesta['correcta']}}  </td>
+                    <td>{{$pregunta->Respuesta['falsa1']}} </td>
+                    <td>{{$pregunta->Respuesta['falsa2']}} </td>
+                    
+                    <td> <a href="#"><i class="fas fa-edit"></i></a>
+                        <a href="#"><i class="fas fa-trash"></i></a></td>
+                        
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </article>
