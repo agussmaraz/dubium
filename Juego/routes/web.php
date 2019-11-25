@@ -37,6 +37,6 @@ Route::get('/nosotros', function (){
 Route::get('/perfil' , function (){
     return view('perfil');
 });
-Route::get('/f.a.q' , function(){
+Route::get('/frecuentes' , function(){
     return view('faq');
 });
