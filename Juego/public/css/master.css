@@ -24,6 +24,98 @@ body {
     background-color: #2C263F !important;
 }
 
+/*------ Index -------*/
+
+.content{
+height: 100vh;
+}
+
+#logo{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    animation: fill 4s ease forwards;
+    cursor: pointer;
+}
+#subtitulo{
+    position: absolute;
+    color: white;
+    top: 60%;
+    transform: translateX(60%) translateY(50%);
+}
+#logo path{
+    stroke-dasharray: 6354.38232421875;
+    stroke-dashoffset: 6354.38232421875;
+    animation: line-anim 8s ease forwards;
+}
+
+@keyframes line-anim{
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes fill {
+    from{
+        fill: transparent;
+    }
+    to{
+        fill: white;
+    }
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 10px 30px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #A0D8C8;
+    border-radius: 20px;
+}
+.top-right{
+    position: absolute;
+    top: 10%;
+    right: 2%;
+}
+/*------ Home ------*/
+
+.HOME--titulo{
+    margin-top: 2em;
+    text-align: center;
+}
+#bienvenido{
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+}
+.HOME--titulo h2{
+    color: white;
+    font-size: 3em;
+}
+.HOME--titulo img{
+    width: 70%;
+    margin: 2em 0;
+    cursor: pointer;
+}
+.HOME--juegos ul{
+    display: inline-flex;
+}
+.HOME--juegos ul li{
+    list-style-type: none;
+    display: inline;
+}
+.HOME--juegos ul li a:hover{
+    color: #2C263F;
+}
+.HOME--juegos ul li img{
+    width: 70%;
+    margin: 2em 0;
+}
+
 /*---------- registro.php --------- */
 .sec-regis{
     display: flex;
@@ -295,13 +387,65 @@ body {
 .e-crud {
     color: #2C263F;
 }
+/* -------- Editar pregunta--------- */
+.titulo-editar {
+    color: white;
+    background-color: #D85F75;
+    width: 60%;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 30px;
+}
+.pregunta-elegida {
+    color: white;
+    background-color: #694872;
+    width: 40%;
+    margin: 40px auto;
+    padding: 18px;
+    border-radius: 30px;
+}
+.form-editar {
+    color: white;
+    background-color: #694872;
+    width: 40%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+}
+.div-form-editar {
+    margin-top: 20px;
+    font-size: 18px;
+}
+.div-button-editar {
+    margin-top: 20px;
+    color: white;
+    background-color: #DF8B8B;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid #DF8B8B;
+}
+.input-editar {
+    border-radius: 8px;
+}
+.button-volver {
+    font-size: 30px;
+    color: white;
+}
+.cajita-button {
+    width: 20%;
+}
+.button.title {
+    display: flex;
+}
+/* --------------Raking----------- */
 .cajamadre--ranking {
     display: flex;
 }
 .caja1--ranking{
     border-radius: 30px;
-    width: 50%;
-    height: 400px;
+    width: 40%;
+    height: 50%;
     margin: 40px;
     background-color: #694872;
     padding: 0;
@@ -323,20 +467,16 @@ body {
 .nombres--ranking {
     font-size: 1.7em;
     font-weight: bold;
+    text-align: center;
 }
 .user1 {
     color: #D85F75;
 }
-.user2 {
-    color:#A0D8C8;
-    
-}
-.user3 {
-    color: #D88E4E;
-}
 .numeros--ranking {
-    margin-left: 7em;
+    /* margin-left: 10em; */
     color: white;
+    text-align: center;
+    font-size: 1.5em;
 }
 /* ---------------Usuario----------------- */
 
@@ -465,94 +605,86 @@ body {
     height: 2em;
     
 }
-/* --------------FAQ----------------- */
+/* ---------------Juego----------------- */
+.cajita-juego {
+    color: white;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    width: 50em;
+    margin: 5% auto;
+    border-radius: 30px;
+    padding: 10px;
+}
+.pregunta-juego {
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 2.5em;
+    padding: 10px;
+    overflow-wrap:	break-word;
+    /* background-color: #D85F75; */
+}
+.respuesta-juegoA {
+    font-size: 2em;
+    overflow-wrap:	break-word;
+    word-break:	normal;
+    background-color: #DF8B8B;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+}
+.respuesta-juegoB {
+    font-size: 2em;
+    overflow-wrap:	break-word;
+    background-color: #D88E4E ;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+}
+.respuesta-juegoC {
+    font-size: 2em;
+    overflow-wrap:	break-word;
+    background-color: #A0D8C8;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+}
+.small-juego {
+    color: white;
+    text-align: center;
+}
+.cajita-puntos {
+    color: white;
+}
 
-.FAQ--grilla{
-    display: grid;
-    grid-template-rows: auto;
-    grid-row-gap: 3em; 
-}
 
-.titulo--frecuentes{
-    color: #D88E4E;
-    margin-top: 1em;
-    font-size: 3em;
-    text-align: center;
-}
-.Primer--div{
-    background: #694872;
-    width: 60%;
-    border-radius: 30px;
-    margin: 0 auto;
-    padding: 0.2em;
-}
-.p--dubium{
-    font-size: 1.9em;
-    color: #D85F75;
-    text-decoration: underline;
-    text-align: center;
-}
-.primera--info {
-    font-size: 1.2em;
-    color: white;
-    text-align: center;
-}
-.Segundo--div{
-    background: #694872;
-    width: 60%;
-    border-radius: 30px;
-    margin: 0 auto;
-    padding: 0.2em;
-}
-.p-info {
-    font-size: 1.9em;
-    color: #A0D8C8;
-    text-decoration: underline;
-    text-align: center;
-}
-.segunda--info {
-    font-size: 1.2em;
-    color: white;
-    text-align: center;
-}
-.FAQ--tema{
-    color: #D85F75;
-    font-size: 1.9em;
-    text-decoration: underline;
-    text-align: center;
-}
-.FAQ--ahorcado{
-    color: #A0D8C8;
-    font-size: 1.9em;
-    text-decoration: underline;
-    text-align: center;
-}
-.FAQ--muerte{
-    color: #D88E4E;
-    font-size: 1.9em;
-    text-decoration: underline;
-    text-align: center;
-}
-.FAQ--Info{
-    color: white;
-    background: #694872;
-    border-radius: 30px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0.5em;
-    font-size: 1.2em;
-    text-align: center;
-}
-.FAQ--footer{
-    padding: 0.5em;
-    margin-top: 1em;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ---------------Footer----------------- */
 
 footer {
     color: white;
+    text-align: center;
 }
 .copy {
     color: white;

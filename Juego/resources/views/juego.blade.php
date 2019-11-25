@@ -1,34 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <ul type="none">
+@extends('layouts.plantillaA')
+@section('contenido')
+
+{{--             
+    <li>
+        Usuario: {{$pregunta->user['nombre']}}
+    </li> --}}
+    <section class="container">
+        <div class="cajita-puntos">
+         Puntos:   {{Auth::user()->puntos}}
+        </div>
+        <div class="cajita-juego">     
+            <ul type="none">
+                <li class="pregunta-juego">
+                    <p class="preg-juego">
+                        {{$pregunta->pregunta}}
+                    </p> 
+                </li>  
+                <form action="{{url('respuesta')}}" method="post">
+                    @csrf
+                    <input type="submit" name="respuesta-elegida" value="{{$respuestas[0]}}" class="respuesta-juegoA">
+                </form>
+                
+                <form action="{{url('respuesta')}}" method="post">
+                    @csrf
+                    <input type="submit" name="respuesta-elegida" value="{{$respuestas[1]}}" class="respuesta-juegoB">
+                </form>
+                
+                <form action="{{url('respuesta')}} " method="post">
+                    @csrf
+                    <input type="submit" name="respuesta-elegida" value="{{$respuestas[2]}}" class="respuesta-juegoC">
+                </form>
+                
+            </ul>
+            
+            <small class="small-juego">     
+                Esta pregunta es de {{$pregunta->user['nombre']}} 
+            </small> 
+        </div>  
         
-        <li>
-            Usuario: {{$pregunta->user['nombre']}}
-        </li>
-        <br>
-        <li>
-            Pregunta:   {{$pregunta->pregunta}}
-        </li>  
-        
-        <br>
-        Respuestas:
-        
-        <li>
-            A:    {{$respuestas[0]}}
-        </li>
-        <li>
-            B:   {{$respuestas[1]}}
-        </li>
-        <li>
-            C:    {{$respuestas[2]}}
-        </li>
-    </ul>
-</body>
-</html>
+    </section>
+    
+    @endsection
