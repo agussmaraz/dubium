@@ -40,6 +40,6 @@ Route::get('/contacto' , function (){
 Route::get('/nosotros', function (){
     return view('nosotros');
 });
-Route::get('/f.a.q' , function(){
+Route::get('/frecuentes' , function(){
     return view('faq');
 });

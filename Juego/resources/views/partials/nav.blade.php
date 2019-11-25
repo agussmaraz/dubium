@@ -1,7 +1,6 @@
 @auth
 
 @if (auth()->user()->perfil != 9)
-    {{-- <img src="public.img.logo.png" alt=""> --}}
 
 <nav class="rounded-pill navbar">
     <button class="navbar-toggler bg-info btn-lg d-lg-none" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
@@ -9,6 +8,9 @@
     </button>
     <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNav">
         <ul class="nav nav-pills nav-fill">
+                <li class="nav-item mr-2">
+                        <a href="/"><img class="d-lg-block w-40 d-none" src="img/logo.png" alt="logo"></a>
+                    </li>
             <li class="nav-item">
                 <a class="nav-link rounded-pill" href="crea"> Crea </a>
             </li>
@@ -43,7 +45,7 @@
 
   
   @if (auth()->user()->perfil != 0)
-  <img src="public.img.logo.png" alt="">
+  
 
 <nav class="rounded-pill navbar">
     <button class="navbar-toggler bg-info btn-lg d-lg-none" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
@@ -52,6 +54,9 @@
 
         <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNav">
             <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item col-lg-2">
+                            <a href="/"><img class="d-lg-block w-50 d-none" src="public/img/logo.png" alt="logo"></a>
+                        </li>
                 <li class="nav-item">
                     <a class="nav-link rounded-pill" href="../vistas-admin/vista-crud.php"> Usuarios </a>
                 </li>

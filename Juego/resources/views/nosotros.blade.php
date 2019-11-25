@@ -10,8 +10,8 @@
         <p class="p--caja">
            <br> Es un juego creado por un grupo de estudiantes de Digital House.<br>
             Lo forman: Agustina quien es Scrum master junto con Mauricio y Tomas que son parte del Scrum Team.
-           <br> Esperamos que puedan acceder a nuestro juegos con facilidad y que puedan disfrutarlos, si necesitan contactarse 
-            con nosotross pueden presionar el boton de abajo o tambien pueden seguirnos en nuestras redes sociales.
+           <br> Esperamos que puedan acceder a nuestro juego con facilidad y que puedan disfrutarlo, si necesitan contactarse 
+            con nosotros pueden presionar el boton de abajo o tambien pueden seguirnos en nuestras redes sociales.
         </p>
     </div>
     <div class="caja--contactenos">
