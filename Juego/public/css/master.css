@@ -42,7 +42,8 @@ height: 100vh;
 #subtitulo{
     position: absolute;
     color: white;
-    top: 50%;
+    top: 60%;
+    transform: translateX(60%) translateY(50%);
 }
 #logo path{
     stroke-dasharray: 6354.38232421875;
@@ -80,9 +81,40 @@ height: 100vh;
     top: 10%;
     right: 2%;
 }
+/*------ Home ------*/
 
-
-
+.HOME--titulo{
+    margin-top: 2em;
+    text-align: center;
+}
+#bienvenido{
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+}
+.HOME--titulo h2{
+    color: white;
+    font-size: 3em;
+}
+.HOME--titulo img{
+    width: 70%;
+    margin: 2em 0;
+    cursor: pointer;
+}
+.HOME--juegos ul{
+    display: inline-flex;
+}
+.HOME--juegos ul li{
+    list-style-type: none;
+    display: inline;
+}
+.HOME--juegos ul li a:hover{
+    color: #2C263F;
+}
+.HOME--juegos ul li img{
+    width: 70%;
+    margin: 2em 0;
+}
 
 /*---------- registro.php --------- */
 .sec-regis{
