@@ -1,7 +1,7 @@
 @auth
 
 @if (auth()->user()->perfil != 9)
-    <img src="public.img.logo.png" alt="">
+    {{-- <img src="public.img.logo.png" alt=""> --}}
 
 <nav class="rounded-pill navbar">
     <button class="navbar-toggler bg-info btn-lg d-lg-none" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
         </li>
            
                 <li class="nav-item">
-                    <a id="logout" href="../vistas-usuario/logout.php" class="nav-link rounded-pill">Logout</a>
+                    <a id="logout" href="{{ route('logout') }}" class="nav-link rounded-pill">Logout</a>
                 </li>
             
                          
