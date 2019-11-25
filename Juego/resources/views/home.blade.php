@@ -1,23 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.plantillaA')
+@section('contenido')
+<body>
+        <section class="container">
+            <article class=HOME--titulo>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+                    <p id="bienvenido">Bienvenido</p>
+                
+                <img id="dubium" src="img/Iconos-Cosas-Varias/DUBIUM.png" alt="Dubium logo">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                <h2 id="play">Pon a prueba tus conocimientos.</h2>
+            </article>
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        </section>
+</body>
+<script src="js/main.js"></script>
 @endsection
