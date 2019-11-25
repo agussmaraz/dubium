@@ -295,6 +295,57 @@ body {
 .e-crud {
     color: #2C263F;
 }
+/* -------- Editar pregunta--------- */
+.titulo-editar {
+    color: white;
+    background-color: #D85F75;
+    width: 60%;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 30px;
+}
+.pregunta-elegida {
+    color: white;
+    background-color: #694872;
+    width: 40%;
+    margin: 40px auto;
+    padding: 18px;
+    border-radius: 30px;
+}
+.form-editar {
+    color: white;
+    background-color: #694872;
+    width: 40%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+}
+.div-form-editar {
+    margin-top: 20px;
+    font-size: 18px;
+}
+.div-button-editar {
+    margin-top: 20px;
+    color: white;
+    background-color: #DF8B8B;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid #DF8B8B;
+}
+.input-editar {
+    border-radius: 8px;
+}
+.button-volver {
+    font-size: 30px;
+    color: white;
+}
+.cajita-button {
+    width: 20%;
+}
+.button.title {
+    display: flex;
+}
 /* --------------Raking----------- */
 .cajamadre--ranking {
     display: flex;

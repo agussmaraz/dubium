@@ -45,7 +45,7 @@
             <tbody>
                 
                 @foreach($preguntas as $pregunta)
-                    <tr>
+                <tr>
                     <td scope="row"> 
                         {{$pregunta['pregunta']}}
                     </td>
@@ -53,7 +53,11 @@
                     <td>{{$pregunta->Respuesta['falsa1']}} </td>
                     <td>{{$pregunta->Respuesta['falsa2']}} </td>
                     
-                    <td> <a href="#"><i class="fas fa-edit"></i></a>
+                    {{-- @foreach($pregunta as $key => $value) --}}
+                    {{-- /editar/{{$value->id}} --}}
+                    <td> <a href="{{(url('/editar'))}} "><i class="fas fa-edit"></i></a>
+                        {{-- {{$key}}
+                        @endforeach   --}}
                         <a href="#"><i class="fas fa-trash"></i></a></td>
                         
                     </tr>

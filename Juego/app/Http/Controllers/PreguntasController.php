@@ -73,4 +73,15 @@ class PreguntasController extends Controller
 
         return redirect('/crea');
     }
+
+    public function vista(){
+        // $pregunta = Pregunta::find($id);
+        // dd($pregunta);
+        return view('editar');
+    }
+
+
+    // public function vista(){
+    //     return view('editar');
+    // }
 }
