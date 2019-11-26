@@ -115,7 +115,18 @@ height: 100vh;
     width: 70%;
     margin: 2em 0;
 }
-
+.boton-jugar {
+    border-radius: 50%;
+    padding: 55px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border: solid white;
+    background-color: #D85F75;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 30px;
+}
 /*---------- registro.php --------- */
 .sec-regis{
     display: flex;
@@ -743,14 +754,19 @@ height: 100vh;
 .cajita-puntos {
     color: white;
 }
-
-
-
-
-
-
-
-
+/* ------------Final------------- */
+.titulo-perdiste {
+    color: #DF8B8B;
+}
+.cajita-perdiste {
+    text-align: center;
+    color: white;
+    background-color: #694872;
+    width: 40%;
+    height: 200px ;
+    margin: 100px auto;
+    border-radius: 30px;
+}
 
 
 
@@ -768,6 +784,7 @@ height: 100vh;
 footer {
     color: white;
     text-align: center;
+    margin-top: 200px;
 }
 .copy {
     color: white;

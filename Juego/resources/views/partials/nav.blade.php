@@ -9,13 +9,13 @@
     <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarNav">
         <ul class="nav nav-pills nav-fill">
                 <li class="nav-item mr-2">
-                        <a href="/"><img class="d-lg-block w-40 d-none" src="img/logo.png" alt="logo"></a>
+                <a href="{{url('home')}}"><img class="d-lg-block w-40 d-none" src="img/logo.png" alt="logo"></a>
                     </li>
             <li class="nav-item">
                 <a class="nav-link rounded-pill" href="crea"> Crea </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link rounded-pill" href="f.a.q"> F.A.Q</a>
+                <a class="nav-link rounded-pill" href="f.a.q"> FAQ</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link rounded-pill" href="contacto"> Contacto</a>
