@@ -12,26 +12,51 @@ use Illuminate\Support\Facades\App;
 class PreguntasController extends Controller
 {
 
+    public function inicio(Request $request)
+    {
+        $usuario = Auth::user();
+        // $partidas = $usuario->puntos;
+        // session()->put('partidas', $partidas);
+        if ($request->juego) {
+            $usuario->puntos = 0;
+            $usuario->save();
+            $vidas = 3;
+            session()->put('vidas', $vidas);
+        }
+        return redirect('/juego')->with('usuario', $usuario);
+    }
 
     public function siguiente(Request $request)
     {
         $pregunta = Pregunta::inRandomOrder()->first();
         //    dd($request->all());
         //    dd(session("pregunta")->respuesta['correcta']);
+
+        // session()->put('vidas', $vidas);
         $usuario = Auth::user();
         if ($request['respuesta-elegida'] === session()->get("pregunta")->respuesta['correcta']) {
             $usuario->puntos = $usuario->puntos + 10;
             $usuario->save();
             // dd($usuario);
-        } else {
+        } else if($request['respuesta-elegida'] != session()->get("pregunta")->respuesta['correcta']){
             $usuario->puntos = $usuario->puntos - 5;
             $usuario->save();
+            session()->put('vidas', session()->get('vidas') - 1);
+            // $vidas = $vidas - 1;
+            // $vidas->save();
+            if (session()->get('vidas') < 1) {
+
+                return redirect('final');
+            }
+            // $vidas->update();
         }
-        // session()->put('puntos', $usuario);
+        // dd(session()->get("vidas"));
         session()->put('pregunta', $pregunta);
+        // dd(session()->get('vidas'));
         // dd($request['respuesta-elegida']);
         return redirect('/juego');
     }
+    // ->with('vidas', $vidas)
 
     public function view()
     {
@@ -74,7 +99,8 @@ class PreguntasController extends Controller
         return redirect('/crea');
     }
 
-    public function vista(){
+    public function vista()
+    {
         // $pregunta = Pregunta::find($id);
         // dd($pregunta);
         return view('editar');

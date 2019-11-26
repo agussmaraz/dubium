@@ -8,6 +8,8 @@
     <section class="container">
         <div class="cajita-puntos">
          Puntos:   {{Auth::user()->puntos}}
+         <br>
+         Vidas: {{session()->get('vidas')}}
         </div>
         <div class="cajita-juego">     
             <ul type="none">

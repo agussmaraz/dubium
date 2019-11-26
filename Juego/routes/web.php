@@ -11,23 +11,42 @@
 |
 */
 //Ruta que retorna la vista de welcome
+
+use App\Http\Controllers\PreguntasController;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
 Auth::routes();
+
+
+
 //Ruta para el home
 Route::get('/home', 'HomeController@index')->name('home');
 // Rutas para ver si te traen las preguntas y respuestas
 // Route::get('/verPreguntas', 'PreguntasController@show');
 // Route::get('/verRespuestas', 'RespuestaController@show');
 
+//Vista que me dice que perdi el juego
+Route::get('/final', function(){
+    return view('/final');
+});
+Route::post('/final', 'PreguntasController@siguiente');
+
 // Ruta para el perfil 
 Route::get('/perfil', 'UsuarioController@show');
 // Ruta para crear tus preguntas, una de la vista y otra que envia los datos 
+Route::post('/juego', 'PreguntasController@inicio');
+// Route::get('/home', 'PreguntasController@inicio');
+
 Route::post('/crea', 'PreguntasController@agregar')->name('agregarPreguntas');
 Route::get('/crea', 'PreguntasController@crud');
 // Ruta del juego, una que te lleva a la vista y otra que te analiza las respuestas
+
 Route::get('/juego', 'PreguntasController@view')->name('juego');
 Route::post('/respuesta', 'PreguntasController@siguiente')->name('siguiente');
 //Ruta para editar las preguntas

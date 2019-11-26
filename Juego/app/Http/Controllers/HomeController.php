@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,5 +23,14 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function inicio(Request $request){
+        $usuario = Auth::user();
+        if($request['juego']){
+            $usuario->puntos = $usuario->puntos +100;
+            $usuario->save();
+        }
+        return redirect('/juego')->with('usuario', $usuario);
     }
 }
