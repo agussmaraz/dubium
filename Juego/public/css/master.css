@@ -27,7 +27,7 @@ body {
 /*------ Welcome -------*/
 
 .content{
-height: 100vh;
+    height: 100vh;
 }
 
 #logo{
@@ -127,6 +127,9 @@ height: 100vh;
     font-size: 30px;
     font-weight: bold;
     margin-top: 30px;
+    -webkit-box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);
+    box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);  
 }
 /*---------- registro.php --------- */
 .sec-regis{

@@ -7,7 +7,7 @@
     </li> --}}
     <section class="container">
         <div class="cajita-puntos">
-         Puntos:   {{Auth::user()->puntos}}
+         Puntos:   {{session()->get('puntosPartida')}}
          <br>
          Vidas: {{session()->get('vidas')}}
         </div>
