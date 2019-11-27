@@ -6,7 +6,7 @@
             
             <p id="bienvenido">Bienvenido {{Auth::user()->nombre}} </p>
             
-            <img id="dubium" src="img/Iconos-Cosas-Varias/titulo.png" alt="Dubium logo">
+            <img id="dubium" src="img/Iconos-Cosas-Varias/titulo.png">
             
             <h2 id="play">Pon a prueba tus conocimientos.</h2>
             
@@ -20,5 +20,5 @@
         
     </section>
 </body>
-<script src="js/main.js"></script>
+<script src="js/home.js"></script>
 @endsection

@@ -15,6 +15,7 @@
 
 </head>
 <body>
+    <!--
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
         <div class="top-right links">
@@ -39,7 +40,7 @@
             @endauth
         </div>
         @endif
-        
+    -->
         <div class="content">
             <div class="title">
                 <svg id="logo"  width="1035" height="218" viewBox="0 0 1035 218" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,6 +65,6 @@
             </div> --}}
         </div>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/welcome.js"></script>
 </body>
 </html>

@@ -24,7 +24,7 @@ body {
     background-color: #2C263F !important;
 }
 
-/*------ Index -------*/
+/*------ Welcome -------*/
 
 .content{
     height: 100vh;
@@ -38,7 +38,9 @@ body {
     width: 70%;
     animation: fill 4s ease forwards;
     cursor: pointer;
+    
 }
+
 #subtitulo{
     position: absolute;
     color: white;
@@ -99,7 +101,6 @@ body {
 .HOME--titulo img{
     width: 70%;
     margin: 2em 0;
-    cursor: pointer;
 }
 .HOME--juegos ul{
     display: inline-flex;
@@ -757,6 +758,23 @@ body {
 .cajita-puntos {
     color: white;
 }
+.cajita-juego form {
+    opacity: 0;
+}
+
+#respuesta-1{
+ transition: all 0.5s ease 0.3s;
+}
+#respuesta-2{
+ transition: all 0.5s ease 0.6s;
+}
+#respuesta-3{
+ transition: all 0.5s ease 0.9s;
+}
+
+.cajita-juego form.fade{
+    opacity: 1;
+}
 /* ------------Final------------- */
 .titulo-perdiste {
     color: #DF8B8B;
@@ -770,6 +788,111 @@ body {
     margin: 100px auto;
     border-radius: 30px;
 }
+
+@media (max-width: 768px){
+
+    /* ---- Welcome ---- */
+    #subtitulo{
+        position: absolute;
+        width:100%;
+        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+@media (max-width: 420px){
+    
+    /* ---- Welcome ---- */
+     #subtitulo{
+        position: absolute;
+        width:100%;
+        color: white;
+        top: 55%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        font-size: 1.25em;
+    }
+
+    /*------ Home ------*/
+
+    #bienvenido{
+        font-size: 2em;
+        color: white;
+        text-align: center;
+    }
+    .HOME--titulo h2{
+        color: white;
+        font-size: 2.5em;
+    }
+    .HOME--titulo img{
+        width: 100%;
+        margin: 2em 0;
+    }
+
+    /* ---------------Juego----------------- */
+
+
+.cajita-juego {
+    color: white;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    width: 90%;
+    margin: 5% auto;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+
+.pregunta-juego {
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 2.5em;
+    padding: 10px;
+    overflow-wrap:	break-word;
+    /* background-color: #D85F75; */
+}
+.respuesta-juegoA {
+    font-size: 2em;
+    overflow-wrap:	break-word;
+    word-break:	normal;
+    background-color: #DF8B8B;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+}
+.respuesta-juegoB {
+    font-size: 2em;
+    overflow-wrap:	break-word;
+    background-color: #D88E4E ;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+}
+.respuesta-juegoC {
+    font-size: 2em;
+    overflow-wrap:	break-word;
+    background-color: #A0D8C8;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+}
+.small-juego {
+    color: white;
+    text-align: center;
+}
+.cajita-puntos {
+    color: white;
+}
+
+}
+
 
 
 
