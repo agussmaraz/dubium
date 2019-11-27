@@ -8,7 +8,7 @@
     <ul type="none">
         <br>
         <h4>
-            Tus puntos: {{Auth::user()->puntos }}
+            Tus puntos: {{session()->get('puntosPartida')}}
         </h4>
     </ul>
       

@@ -14,16 +14,21 @@ class PreguntasController extends Controller
 
     public function inicio(Request $request)
     {
-        $usuario = Auth::user();
+        // $usuario = Auth::user();
         // $partidas = $usuario->puntos;
         // session()->put('partidas', $partidas);
+        $puntosPartida = 0;
         if ($request->juego) {
-            $usuario->puntos = 0;
-            $usuario->save();
+             $puntosPartida;
+             session()->put('puntosPartida', $puntosPartida);
+            //  dd(session()->get('puntosPartida'));
+            // $usuario->puntos = 0;
+            // $usuario->save();
             $vidas = 3;
             session()->put('vidas', $vidas);
+            
         }
-        return redirect('/juego')->with('usuario', $usuario);
+        return redirect('/juego');
     }
 
     public function siguiente(Request $request)
@@ -35,17 +40,20 @@ class PreguntasController extends Controller
         // session()->put('vidas', $vidas);
         $usuario = Auth::user();
         if ($request['respuesta-elegida'] === session()->get("pregunta")->respuesta['correcta']) {
-            $usuario->puntos = $usuario->puntos + 10;
-            $usuario->save();
+            // $usuario->puntos = $usuario->puntos + 10;
+            // $usuario->save();
+            session()->put('puntosPartida', session()->get('puntosPartida') + 10);
             // dd($usuario);
         } else if($request['respuesta-elegida'] != session()->get("pregunta")->respuesta['correcta']){
-            $usuario->puntos = $usuario->puntos - 5;
-            $usuario->save();
+            // $usuario->puntos = $usuario->puntos - 5;
+            session()->put('puntosPartida', session()->get('puntosPartida') - 5);
+            // $usuario->save();
             session()->put('vidas', session()->get('vidas') - 1);
             // $vidas = $vidas - 1;
             // $vidas->save();
             if (session()->get('vidas') < 1) {
-
+                $usuario->puntos = $usuario->puntos + session()->get('puntosPartida') ;
+                $usuario->save();
                 return redirect('final');
             }
             // $vidas->update();
