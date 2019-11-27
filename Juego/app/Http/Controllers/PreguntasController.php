@@ -14,19 +14,12 @@ class PreguntasController extends Controller
 
     public function inicio(Request $request)
     {
-        // $usuario = Auth::user();
-        // $partidas = $usuario->puntos;
-        // session()->put('partidas', $partidas);
         $puntosPartida = 0;
         if ($request->juego) {
-             $puntosPartida;
-             session()->put('puntosPartida', $puntosPartida);
-            //  dd(session()->get('puntosPartida'));
-            // $usuario->puntos = 0;
-            // $usuario->save();
+            $puntosPartida;
+            session()->put('puntosPartida', $puntosPartida);
             $vidas = 3;
             session()->put('vidas', $vidas);
-            
         }
         return redirect('/juego');
     }
@@ -34,37 +27,22 @@ class PreguntasController extends Controller
     public function siguiente(Request $request)
     {
         $pregunta = Pregunta::inRandomOrder()->first();
-        //    dd($request->all());
-        //    dd(session("pregunta")->respuesta['correcta']);
-
-        // session()->put('vidas', $vidas);
         $usuario = Auth::user();
         if ($request['respuesta-elegida'] === session()->get("pregunta")->respuesta['correcta']) {
-            // $usuario->puntos = $usuario->puntos + 10;
-            // $usuario->save();
             session()->put('puntosPartida', session()->get('puntosPartida') + 10);
-            // dd($usuario);
-        } else if($request['respuesta-elegida'] != session()->get("pregunta")->respuesta['correcta']){
-            // $usuario->puntos = $usuario->puntos - 5;
+        } else if ($request['respuesta-elegida'] != session()->get("pregunta")->respuesta['correcta']) {
             session()->put('puntosPartida', session()->get('puntosPartida') - 5);
-            // $usuario->save();
             session()->put('vidas', session()->get('vidas') - 1);
-            // $vidas = $vidas - 1;
-            // $vidas->save();
             if (session()->get('vidas') < 1) {
-                $usuario->puntos = $usuario->puntos + session()->get('puntosPartida') ;
+                $usuario->puntos = $usuario->puntos + session()->get('puntosPartida');
                 $usuario->save();
                 return redirect('final');
             }
-            // $vidas->update();
         }
-        // dd(session()->get("vidas"));
         session()->put('pregunta', $pregunta);
-        // dd(session()->get('vidas'));
-        // dd($request['respuesta-elegida']);
         return redirect('/juego');
     }
-    // ->with('vidas', $vidas)
+
 
     public function view()
     {
@@ -76,8 +54,6 @@ class PreguntasController extends Controller
         ])->shuffle();
 
         session()->put('pregunta', $pregunta);
-
-
         return view('juego')->with('pregunta', $pregunta)->with('respuestas', $respuestas);
     }
 
@@ -90,7 +66,6 @@ class PreguntasController extends Controller
 
     public function agregar(Request $request)
     {
-        // dd($request->all());
         $nuevaRespuesta = new \App\Respuesta();
         $nuevaRespuesta->correcta = $request['correcta'];
         $nuevaRespuesta->falsa1 = $request['falsa1'];
@@ -109,13 +84,6 @@ class PreguntasController extends Controller
 
     public function vista()
     {
-        // $pregunta = Pregunta::find($id);
-        // dd($pregunta);
         return view('editar');
     }
-
-
-    // public function vista(){
-    //     return view('editar');
-    // }
 }
