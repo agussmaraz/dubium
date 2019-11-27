@@ -18,17 +18,17 @@
                         {{$pregunta->pregunta}}
                     </p> 
                 </li>  
-                <form action="{{url('respuesta')}}" method="post">
+                <form action="{{url('respuesta')}}" method="post" id="respuesta-1">
                     @csrf
                     <input type="submit" name="respuesta-elegida" value="{{$respuestas[0]}}" class="respuesta-juegoA">
                 </form>
                 
-                <form action="{{url('respuesta')}}" method="post">
+                <form action="{{url('respuesta')}}" method="post" id="respuesta-2">
                     @csrf
                     <input type="submit" name="respuesta-elegida" value="{{$respuestas[1]}}" class="respuesta-juegoB">
                 </form>
                 
-                <form action="{{url('respuesta')}} " method="post">
+                <form action="{{url('respuesta')}} " method="post" id="respuesta-3">
                     @csrf
                     <input type="submit" name="respuesta-elegida" value="{{$respuestas[2]}}" class="respuesta-juegoC">
                 </form>
@@ -41,5 +41,5 @@
         </div>  
         
     </section>
-    
+    <script src="js/juego.js"></script>
     @endsection

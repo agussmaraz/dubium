@@ -758,6 +758,23 @@ body {
 .cajita-puntos {
     color: white;
 }
+.cajita-juego form {
+    opacity: 0;
+}
+
+#respuesta-1{
+ transition: all 0.5s ease 0.3s;
+}
+#respuesta-2{
+ transition: all 0.5s ease 0.6s;
+}
+#respuesta-3{
+ transition: all 0.5s ease 0.9s;
+}
+
+.cajita-juego form.fade{
+    opacity: 1;
+}
 /* ------------Final------------- */
 .titulo-perdiste {
     color: #DF8B8B;
@@ -827,6 +844,8 @@ body {
     border-radius: 30px;
     padding: 10px;
 }
+
+
 .pregunta-juego {
     color: white;
     width: 50%;
