@@ -3,7 +3,7 @@
 <div class="container">
     
     <div class = "p--registro">{{ __('Registro') }}</div>
-    <form method="POST" class="form--regis" action="{{ route('register') }}">
+    <form method="POST" class="form--regis" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
         
         <div class="form">
@@ -58,6 +58,13 @@
                 <input  placeholder="Repetir contraseña" id="password-confirm" type="password" class="in--regis" name="password_confirmation" required autocomplete="new-password">
             </div>
         </div>
+        <div class="form">
+                <label for="avatar" class="sub--texto">{{ __('Elegi un avatar') }}</label>
+                
+                <div>
+                    <input   id="avatar" type="file" class="in--regis" name="avatar" required autocomplete="new-avatar">
+                </div>
+            </div>
         
         {{-- <div class="form-group row mb-0"> --}}
             <div class="col-md-6 offset-md-3">
