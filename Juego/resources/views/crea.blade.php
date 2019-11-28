@@ -59,7 +59,6 @@
                         <a href="editar/{{$pregunta->id}}"><i class="fas fa-edit"></i></a>    
                         <a href="#"><i class="fas fa-trash"></i></a></td>
                     </td>
-                
                     {{-- {{$pregunta->id}} --}}
                     {{-- <td> <a href=" {{url('editar/{{$pregunta->id}}')}}"><i class="fas fa-edit"></i></a> --}}
                         
