@@ -39,19 +39,21 @@ Route::post('/final', 'PreguntasController@siguiente');
 
 // Ruta para el perfil 
 Route::get('/perfil', 'UsuarioController@show');
-// Ruta para crear tus preguntas, una de la vista y otra que envia los datos 
-Route::post('/juego', 'PreguntasController@inicio');
-// Route::get('/home', 'PreguntasController@inicio');
 
+
+// Ruta para crear tus preguntas, una de la vista y otra que envia los datos 
 Route::post('/crea', 'PreguntasController@agregar')->name('agregarPreguntas');
 Route::get('/crea', 'PreguntasController@crud');
-// Ruta del juego, una que te lleva a la vista y otra que te analiza las respuestas
 
+// Ruta del juego, una que te lleva a la vista y otra que te analiza las respuestas
+Route::post('/juego', 'PreguntasController@inicio');
 Route::get('/juego', 'PreguntasController@view')->name('juego');
 Route::post('/respuesta', 'PreguntasController@siguiente')->name('siguiente');
+
 //Ruta para editar las preguntas
-Route::get('/editar', 'PreguntasController@vista');
-// Route::get('/editar', 'PreguntasController@editar');
+Route::post('/editar', 'PreguntasController@vista');
+Route::get('/editar/{id}', 'PreguntasController@editar');
+
 //Tomi: Creo rutas para nosotros y contacto que por el momento solo retornan una vista
 Route::get('/contacto' , function (){
     return view('contacto');

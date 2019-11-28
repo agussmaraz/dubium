@@ -1,7 +1,9 @@
 @extends('layouts.plantillaA')
 @section('contenido')
 <section class="contenedor">
-   
+   <p class="p--contacto">
+        Contacto
+   </p>
     <form class="formulario--nosotros" action="#" method="POST">
         <div class="form--nosotros">
             <label for="text">

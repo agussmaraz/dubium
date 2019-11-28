@@ -16,9 +16,13 @@
             </div>
         </article>
         <div class="pregunta-elegida">
+            <h4>
+                {{$preguntas->pregunta}}
+            </h4>
         </div>
         <article class="form-editar">
             <form action="" method="post">
+                @csrf
                 <div class="div-form-editar">
                     <label for="">Escriba la nueva pregunta:</label>
                     <br>

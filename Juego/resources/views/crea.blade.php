@@ -40,11 +40,13 @@
                     <th scope="col" class="i-crud">Respuesta incorrecta</th>
                     <th scope="col" class="in-crud">Respuesta incorrecta</th>
                     <th scope="col" class="e-crud">Editar</th>
+                    
                 </tr>
             </thead>
             <tbody>
                 
-                @foreach($preguntas as $pregunta)
+                @foreach($preguntas as $key => $pregunta)
+                {{-- @dd($pregunta->id); --}}
                 <tr>
                     <td scope="row"> 
                         {{$pregunta['pregunta']}}
@@ -53,12 +55,14 @@
                     <td>{{$pregunta->Respuesta['falsa1']}} </td>
                     <td>{{$pregunta->Respuesta['falsa2']}} </td>
                     
-                    {{-- @foreach($pregunta as $key => $value) --}}
-                    {{-- /editar/{{$value->id}} --}}
-                    <td> <a href="{{(url('/editar'))}} "><i class="fas fa-edit"></i></a>
-                        {{-- {{$key}}
-                        @endforeach   --}}
+                    <td>
+                        <a href="editar/{{$pregunta->id}}"><i class="fas fa-edit"></i></a>    
                         <a href="#"><i class="fas fa-trash"></i></a></td>
+                    </td>
+                
+                    {{-- {{$pregunta->id}} --}}
+                    {{-- <td> <a href=" {{url('editar/{{$pregunta->id}}')}}"><i class="fas fa-edit"></i></a> --}}
+                        
                         
                     </tr>
                     @endforeach

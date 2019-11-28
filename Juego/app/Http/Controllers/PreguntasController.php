@@ -86,4 +86,8 @@ class PreguntasController extends Controller
     {
         return view('editar');
     }
+    public function editar($id){
+        $preguntas = Pregunta::find($id);
+        return view('editar')->with('preguntas', $preguntas);
+    }
 }

@@ -416,8 +416,10 @@ body {
     background-color: #694872;
     width: 40%;
     margin: 40px auto;
-    padding: 18px;
+    padding: 12px;
     border-radius: 30px;
+    text-align: center;
+    overflow-wrap:	break-word;
 }
 .form-editar {
     color: white;
