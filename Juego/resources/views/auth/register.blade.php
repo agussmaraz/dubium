@@ -76,7 +76,7 @@
         </form>
         <div class="cuenta">
             <p class="p--usuario"> Ya tenes cuenta? </p>
-            <a class = "b--ingresa" href="login.php">Ingresa</a>
+            <a class = "b--ingresa" href="{{route('login')}}">Ingresa</a>
         </div>
     </div>
     @endsection
