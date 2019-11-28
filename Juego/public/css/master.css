@@ -340,6 +340,7 @@ body {
 
 .cajas--form {
     margin-left: 3em;
+    margin-right: 3em;
     margin-bottom: 1em;
     display: flex;
     flex-flow: column;
@@ -355,14 +356,10 @@ body {
     width: 110%;
     border-radius: 8px;
 }
-.tematica--crea {
-    color: white;
-    margin-top: 1.5em;
-    margin-right: 1em;
-}
+
 .boton--crea {
     font-size: 1em;
-    width: 50%;
+    width: 80%;
     height: 15%;
     padding: 0.5em;
     border-radius: 15px;
@@ -387,6 +384,9 @@ body {
 .crud {
     background-color: #694872;
     margin-bottom: 2em;
+}
+.crud table{
+    background-color: #694872;
 }
 .p-crud {
     color: #D85F75 ;
@@ -920,6 +920,26 @@ body {
     background-color: #694872;
     margin: 3em auto;
 }
+
+/*---- Crea ----*/
+
+.contenedor--form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 1em;
+    width: 80%;
+    background-color: #694872;
+    transform: translate(50% -50%);
+}
+.crud {
+    background-color: #694872;
+    margin-bottom: 2em;
+}
+
+
 
 }
 
