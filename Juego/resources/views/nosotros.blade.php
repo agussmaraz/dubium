@@ -6,7 +6,7 @@
         Nosotros
     </p>
     <div class="caja--contacto">
-       <center> <img src="../img/Iconos-Cosas-Varias/Titulo recto.png" width="200px" class="img--contacto"></center>
+       <center> <img src="img/Iconos-Cosas-Varias/titulo.png" width="200px" class="img--contacto"></center>
         <p class="p--caja">
            <br> Es un juego creado por un grupo de estudiantes de Digital House.<br>
             Lo forman: Agustina quien es Scrum master junto con Mauricio y Tomas que son parte del Scrum Team.
@@ -15,11 +15,11 @@
         </p>
     </div>
     <div class="caja--contactenos">
-        <button onclick="location.href='contacto.php'" class="b_contactenos"> Contactenos </button>
+        <button id="btn-contacto" class="b_contactenos"> Contactenos </button>
     </div>
 
     
 </section>
 
-    
+<script src="js/nosotros.js"></script>
 @endsection

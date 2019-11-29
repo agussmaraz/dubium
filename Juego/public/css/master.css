@@ -493,6 +493,7 @@ body {
     text-align: center;
     font-size: 1.5em;
 }
+
 /* ---------------Usuario----------------- */
 
 .caja2--usuario {
@@ -580,6 +581,7 @@ body {
     border-radius: 8px; 
 }
 /*--------Nosotros formulario--------*/
+
 .formulario--nosotros{
     margin: 0 auto;
     border-radius: 30px;
@@ -709,7 +711,7 @@ body {
     display: flex;
     flex-flow: column;
     text-align: center;
-    width: 50em;
+    width: 80%;
     margin: 5% auto;
     border-radius: 30px;
     padding: 10px;
@@ -802,6 +804,17 @@ body {
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
     }
+
+    /*---- Nosotros ----*/
+
+.caja--contacto{
+    width: 80%;
+}
+
+.caja--contacto img {
+    margin-bottom: 3em;
+}
+
 }
 
 /*---- Celulares ----*/
@@ -844,7 +857,7 @@ body {
     display: flex;
     flex-flow: column;
     text-align: center;
-    width: 90%;
+    width: 80%;
     margin: 5% auto;
     border-radius: 30px;
     padding: 10px;
@@ -939,7 +952,61 @@ body {
     margin-bottom: 2em;
 }
 
+/*---- Nosotros ----*/
 
+.caja--contacto{
+    width: 80%;
+}
+.caja--contacto img {
+    margin-bottom: 3em;
+}
+
+/*---- Ranking ----*/
+.cajamadre--ranking {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 auto;
+}
+
+.caja1--ranking{
+    border-radius: 30px;
+    width: 80%;
+    height: 50%;
+    margin: 40px;
+    background-color: #694872;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/*----  Usuario ----*/
+
+.caja2--usuario {
+    border-left: none;
+    padding-top: 2em;
+    border-top: solid white 1px;
+    width: 80%;
+    height: 500px;
+    margin-bottom: -100px;
+    margin-left: none;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+/*---- Contacto ----*/
+
+.formulario--nosotros{
+    margin: 0 auto;
+    border-radius: 30px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #694872;
+    margin: 3em auto;
+}
 
 }
 
