@@ -37,8 +37,9 @@
                 <tr>
                     <th scope="col" class="p-crud">Pregunta</th>
                     <th scope="col" class="r-crud">Respuesta correcta</th>
-                    <th scope="col" class="i-crud">Respuesta incorrecta</th>
-                    <th scope="col" class="in-crud">Respuesta incorrecta</th>
+                    <th scope="col" class="i-crud">Respuesta incorrecta A</th>
+                    <th scope="col" class="in-crud">Respuesta incorrecta B</th>
+                    <th scope="col" class="p-crud">Estado</th>
                     <th scope="col" class="e-crud">Editar</th>
                     
                 </tr>
@@ -54,22 +55,21 @@
                     <td>{{$pregunta->Respuesta['correcta']}}  </td>
                     <td>{{$pregunta->Respuesta['falsa1']}} </td>
                     <td>{{$pregunta->Respuesta['falsa2']}} </td>
-                    
+                    @if($pregunta->estado == 0)
+                    <td> <div class="espera"> En espera </div> </td>
+                    @else
+                    <td> <div class="aprobado">Aprobada</div></td>
+                    @endif
                     <td>
                         <a href="editar/{{$pregunta->id}}"><i class="fas fa-edit"></i></a>    
-                        <a href="#"><i class="fas fa-trash"></i></a></td>
+                        <a href="eliminar/{{$pregunta->id}}"><i class="fas fa-trash"></i></a>
                     </td>
-                    {{-- {{$pregunta->id}} --}}
-                    {{-- <td> <a href=" {{url('editar/{{$pregunta->id}}')}}"><i class="fas fa-edit"></i></a> --}}
-                        
-                        
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </article>
-        
-    </section>
-    @endsection
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </article>
     
-    
+</section>
+@endsection
+

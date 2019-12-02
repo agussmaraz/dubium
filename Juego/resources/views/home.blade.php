@@ -15,7 +15,10 @@
                 @csrf
                 <input type="submit" name="juego" value="JUGAR" class="boton-jugar">
             </form>
-            
+            {{-- <form action="{{route ('juegoTiempo')}} ">
+            @csrf
+            <input type="submit" name="juegoTiempo" value="Jugar">
+            </form> --}}
         </article>
         
     </section>

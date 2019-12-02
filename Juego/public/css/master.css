@@ -1,4 +1,4 @@
-*{
+s*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -410,6 +410,7 @@ body {
     margin: 0 auto;
     padding: 15px;
     border-radius: 30px;
+    text-align: center;
 }
 .pregunta-elegida {
     color: white;
@@ -455,6 +456,48 @@ body {
 .button.title {
     display: flex;
 }
+/* ----------Eliminar-------- */
+.pregunta-eliminar {
+    color: white;
+    background-color: #694872;
+    width: 40%;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.respuesta-eliminar {
+    color: white;
+    background-color: #694872;
+    width: 40%;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+}
+.p-resp {
+    color: #A0D8C8;
+}
+.resp {
+    margin-left: 20px;
+    color: white;
+}
+.eliminar-preguntas {
+    color: #DF8B8B;
+}
+.button-eliminar {
+    margin-top: 20px;
+    color: white;
+    background-color: #DF8B8B;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid #DF8B8B;
+}
+.div-eliminar{
+    text-align: center;
+    margin: 20px;
+}
 /* --------------Raking----------- */
 .cajamadre--ranking {
     display: flex;
@@ -465,8 +508,8 @@ body {
     height: 50%;
     margin: 40px;
     background-color: #694872;
-    padding: 0;
-    display: flex;
+    padding-bottom: 15px;
+    /* display: flex; */
     justify-content: center;
 }
 
@@ -490,10 +533,10 @@ body {
     color: #D85F75;
 }
 .numeros--ranking {
-    /* margin-left: 10em; */
+    margin-left: 5em;
     color: white;
     text-align: center;
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
 }
 /* ---------------Usuario----------------- */
 
@@ -765,18 +808,37 @@ body {
 }
 
 #respuesta-1{
- transition: all 0.5s ease 0.3s;
+    transition: all 0.5s ease 0.3s;
 }
 #respuesta-2{
- transition: all 0.5s ease 0.6s;
+    transition: all 0.5s ease 0.6s;
 }
 #respuesta-3{
- transition: all 0.5s ease 0.9s;
+    transition: all 0.5s ease 0.9s;
 }
 
 .cajita-juego form.fade{
     opacity: 1;
 }
+/* -----------Juego Tiempo--------- */
+.cajita-juegoTiempo {
+    color: white;
+    margin: 40px auto;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    font-size: 20px;
+    background-color: #694872;
+    width: 40%;
+    border-radius: 30px;
+}
+.small-juegoTiempo {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+
 /* ------------Final------------- */
 .titulo-perdiste {
     color: #DF8B8B;
@@ -790,11 +852,73 @@ body {
     margin: 100px auto;
     border-radius: 30px;
 }
+/* -----------Admin------------ */
+.crud-admin {
+    margin-top: 1em;
+}
+.e-crud-admin {
+    color: #A0D8C8;
+}
+.usuarios-admin {
+    color: black;
+}
+.titulo-admin {
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    background-color: #694872;
+    border-radius: 30px;
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+}
+.contenedor-admins {
+    display: flex;
+    flex-flow:column ;
+    width: 40%;
+    background-color: #694872;
+    border-radius: 30px;
+    margin: 30px auto;
+    text-align: center;
+    padding: 20px;
+}
+.label-admins {
+    font-size: 23px;
+    color: white;
+    margin-top: 5px;
+}
+.input-admins {
+    width: 50%;
+    border-radius: 8px;
+}
+.icono {
+    font-size: 25px;
+    margin-left: 3px;
+}
+.nuevo {
+    background-color: #FFD906;
+    color: black;
+}
+.espera {
+    background-color: #DFDFDF;
+    color: black;
+    text-align: center;
+    border-radius: 8px;
+}
+.aprobado {
+    background-color: #3D8F05;
+    text-align: center;
+    border-radius: 8px;
+    color: black;
+}
+
+
+
 
 /*---- Tablets ----*/
 
 @media (max-width: 768px){
-
+    
     /* ---- Welcome ---- */
     #subtitulo{
         position: absolute;
@@ -812,7 +936,7 @@ body {
 @media (max-width: 420px){
     
     /* ---- Welcome ---- */
-     #subtitulo{
+    #subtitulo{
         position: absolute;
         width:100%;
         color: white;
@@ -821,9 +945,9 @@ body {
         transform: translateX(-50%) translateY(-50%);
         font-size: 1.25em;
     }
-
+    
     /*------ Home ------*/
-
+    
     #bienvenido{
         font-size: 2em;
         color: white;
@@ -837,92 +961,92 @@ body {
         width: 100%;
         margin: 2em 0;
     }
-
+    
     /* ---------------Juego----------------- */
-
-
-.cajita-juego {
-    color: white;
-    display: flex;
-    flex-flow: column;
-    text-align: center;
-    width: 90%;
-    margin: 5% auto;
-    border-radius: 30px;
-    padding: 10px;
-}
-
-
-.pregunta-juego {
-    color: white;
-    width: 50%;
-    margin: 0 auto;
-    font-size: 2.5em;
-    padding: 10px;
-    overflow-wrap:	break-word;
-    /* background-color: #D85F75; */
-}
-.respuesta-juegoA {
-    font-size: 2em;
-    overflow-wrap:	break-word;
-    word-break:	normal;
-    background-color: #DF8B8B;
-    border-radius: 8px;
-    width: 50%;
-    margin: 10px auto;
-    color: white;
-}
-.respuesta-juegoB {
-    font-size: 2em;
-    overflow-wrap:	break-word;
-    background-color: #D88E4E ;
-    border-radius: 8px;
-    width: 50%;
-    margin: 10px auto;
-    color: white;
-}
-.respuesta-juegoC {
-    font-size: 2em;
-    overflow-wrap:	break-word;
-    background-color: #A0D8C8;
-    border-radius: 8px;
-    width: 50%;
-    margin: 10px auto;
-    color: white;
-}
-.small-juego {
-    color: white;
-    text-align: center;
-}
-.cajita-puntos {
-    color: white;
-}
-
-/* ---- Login ----*/
-
-.login--form{
-    border-radius: 30px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background-color: #694872;
-    margin: 3em auto;
-}
-
-/*---- Registro ----*/
-
-.form--regis{
-    margin: 0 auto;
-    border-radius: 30px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background-color: #694872;
-    margin: 3em auto;
-}
-
+    
+    
+    .cajita-juego {
+        color: white;
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+        width: 90%;
+        margin: 5% auto;
+        border-radius: 30px;
+        padding: 10px;
+    }
+    
+    
+    .pregunta-juego {
+        color: white;
+        width: 50%;
+        margin: 0 auto;
+        font-size: 2.5em;
+        padding: 10px;
+        overflow-wrap:	break-word;
+        /* background-color: #D85F75; */
+    }
+    .respuesta-juegoA {
+        font-size: 2em;
+        overflow-wrap:	break-word;
+        word-break:	normal;
+        background-color: #DF8B8B;
+        border-radius: 8px;
+        width: 50%;
+        margin: 10px auto;
+        color: white;
+    }
+    .respuesta-juegoB {
+        font-size: 2em;
+        overflow-wrap:	break-word;
+        background-color: #D88E4E ;
+        border-radius: 8px;
+        width: 50%;
+        margin: 10px auto;
+        color: white;
+    }
+    .respuesta-juegoC {
+        font-size: 2em;
+        overflow-wrap:	break-word;
+        background-color: #A0D8C8;
+        border-radius: 8px;
+        width: 50%;
+        margin: 10px auto;
+        color: white;
+    }
+    .small-juego {
+        color: white;
+        text-align: center;
+    }
+    .cajita-puntos {
+        color: white;
+    }
+    
+    /* ---- Login ----*/
+    
+    .login--form{
+        border-radius: 30px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background-color: #694872;
+        margin: 3em auto;
+    }
+    
+    /*---- Registro ----*/
+    
+    .form--regis{
+        margin: 0 auto;
+        border-radius: 30px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background-color: #694872;
+        margin: 3em auto;
+    }
+    
 }
 
 

@@ -4,7 +4,7 @@
     <section class="container">
         <article class="button-title">
             <div class="cajita-button">
-                <a href="creaPreguntas.php" class="button-volver">
+                <a href="/crea" class="button-volver">
                     <i class="fas fa-chevron-circle-left"></i>
                 </a>
             </div>
@@ -17,7 +17,7 @@
         </article>
         <div class="pregunta-elegida">
             <h4>
-                {{$preguntas->pregunta}}
+                " {{$preguntas->pregunta}}  "
             </h4>
         </div>
         <article class="form-editar">
@@ -26,24 +26,24 @@
                 <div class="div-form-editar">
                     <label for="">Escriba la nueva pregunta:</label>
                     <br>
-                    <input type="text" name="nuevaPregunta" class="input-editar">
+                    <input type="text" name="pregunta" class="input-editar">
                 </div>
                 
                 <div class="div-form-editar">
                     <label for="">Escriba la nueva respuesta correcta:</label>
                     <br>
-                    <input type="text" name="nuevaRespuesta" class="input-editar">
+                    <input type="text" name="correcta" class="input-editar" value="">
                 </div>
                 
                 <div class="div-form-editar">
                     <label for="">Escriba la nueva respuesta falsa:</label>
                     <br>
-                    <input type="text" name="respuestaFalsa1" class="input-editar">
+                    <input type="text" name="falsa1" class="input-editar">
                 </div>
                 <div class="div-form-editar">
                     <label for="">Escriba la nueva respuesta falsa:</label>
                     <br>
-                    <input type="text" name="respuestaFalsa2" class="input-editar">
+                    <input type="text" name="falsa2" class="input-editar">
                 </div>
                 
                 <div>
