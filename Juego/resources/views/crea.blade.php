@@ -7,7 +7,7 @@
             @csrf
             <div class="cajas--form">
                 <h3 class="subtitulos--crea1"> Escribi tu pregunta: </h3>
-                <input type="text" name="pregunta" class="preguntainput--crea">
+                <input type="text" name="pregunta" class="preguntainput--crea" placeholder="Escribi una pregunta">
             </div>
             <div class="cajas--form">
                 <h3 class="subtitulos--crea2"> Escribi la respuesta: </h3>
@@ -20,13 +20,6 @@
                 <input type="submit" value="Guardar" class="boton--crea">
                 
             </div>
-            <div class="cajas--form">
-                <h3 class="subtitulos--crea3">Selecciona el tema:</h3>
-                <label for="tema" class="tematica--crea">
-                    <p> Muerte subita</p>
-                </label>
-                <input type="radio" name="#">
-            </div>            
         </form>
     </article>
     <p class="subtitulo--crea"> Mis preguntas</p>

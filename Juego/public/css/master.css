@@ -340,6 +340,7 @@ body {
 
 .cajas--form {
     margin-left: 3em;
+    margin-right: 3em;
     margin-bottom: 1em;
     display: flex;
     flex-flow: column;
@@ -355,14 +356,10 @@ body {
     width: 110%;
     border-radius: 8px;
 }
-.tematica--crea {
-    color: white;
-    margin-top: 1.5em;
-    margin-right: 1em;
-}
+
 .boton--crea {
     font-size: 1em;
-    width: 50%;
+    width: 80%;
     height: 15%;
     padding: 0.5em;
     border-radius: 15px;
@@ -387,6 +384,9 @@ body {
 .crud {
     background-color: #694872;
     margin-bottom: 2em;
+}
+.crud table{
+    background-color: #694872;
 }
 .p-crud {
     color: #D85F75 ;
@@ -538,6 +538,7 @@ body {
     text-align: center;
     /* font-size: 1.5em; */
 }
+
 /* ---------------Usuario----------------- */
 
 .caja2--usuario {
@@ -625,6 +626,7 @@ body {
     border-radius: 8px; 
 }
 /*--------Nosotros formulario--------*/
+
 .formulario--nosotros{
     margin: 0 auto;
     border-radius: 30px;
@@ -754,7 +756,7 @@ body {
     display: flex;
     flex-flow: column;
     text-align: center;
-    width: 50em;
+    width: 80%;
     margin: 5% auto;
     border-radius: 30px;
     padding: 10px;
@@ -928,6 +930,17 @@ body {
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
     }
+
+    /*---- Nosotros ----*/
+
+.caja--contacto{
+    width: 80%;
+}
+
+.caja--contacto img {
+    margin-bottom: 3em;
+}
+
 }
 
 /*---- Celulares ----*/
@@ -963,90 +976,164 @@ body {
     }
     
     /* ---------------Juego----------------- */
-    
-    
-    .cajita-juego {
-        color: white;
-        display: flex;
-        flex-flow: column;
-        text-align: center;
-        width: 90%;
-        margin: 5% auto;
-        border-radius: 30px;
-        padding: 10px;
-    }
-    
-    
-    .pregunta-juego {
-        color: white;
-        width: 50%;
-        margin: 0 auto;
-        font-size: 2.5em;
-        padding: 10px;
-        overflow-wrap:	break-word;
-        /* background-color: #D85F75; */
-    }
-    .respuesta-juegoA {
-        font-size: 2em;
-        overflow-wrap:	break-word;
-        word-break:	normal;
-        background-color: #DF8B8B;
-        border-radius: 8px;
-        width: 50%;
-        margin: 10px auto;
-        color: white;
-    }
-    .respuesta-juegoB {
-        font-size: 2em;
-        overflow-wrap:	break-word;
-        background-color: #D88E4E ;
-        border-radius: 8px;
-        width: 50%;
-        margin: 10px auto;
-        color: white;
-    }
-    .respuesta-juegoC {
-        font-size: 2em;
-        overflow-wrap:	break-word;
-        background-color: #A0D8C8;
-        border-radius: 8px;
-        width: 50%;
-        margin: 10px auto;
-        color: white;
-    }
-    .small-juego {
-        color: white;
-        text-align: center;
-    }
-    .cajita-puntos {
-        color: white;
-    }
-    
-    /* ---- Login ----*/
-    
-    .login--form{
-        border-radius: 30px;
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        background-color: #694872;
-        margin: 3em auto;
-    }
-    
-    /*---- Registro ----*/
-    
-    .form--regis{
-        margin: 0 auto;
-        border-radius: 30px;
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        background-color: #694872;
-        margin: 3em auto;
-    }
-    
+
+
+.cajita-juego {
+    color: white;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    width: 80%;
+    margin: 5% auto;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+
+.pregunta-juego {
+    color: white;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 2.5em;
+    padding: 10px;
+    overflow-wrap:	break-word;
+    /* background-color: #D85F75; */
+}
+.respuesta-juegoA {
+    font-size: 2em;
+    overflow-wrap:	break-word;
+    word-break:	normal;
+    background-color: #DF8B8B;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+}
+.respuesta-juegoB {
+    font-size: 2em;
+    overflow-wrap:	break-word;
+    background-color: #D88E4E ;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+}
+.respuesta-juegoC {
+    font-size: 2em;
+    overflow-wrap:	break-word;
+    background-color: #A0D8C8;
+    border-radius: 8px;
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+}
+.small-juego {
+    color: white;
+    text-align: center;
+}
+.cajita-puntos {
+    color: white;
+}
+
+/* ---- Login ----*/
+
+.login--form{
+    border-radius: 30px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #694872;
+    margin: 3em auto;
+}
+
+/*---- Registro ----*/
+
+.form--regis{
+    margin: 0 auto;
+    border-radius: 30px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #694872;
+    margin: 3em auto;
+}
+
+/*---- Crea ----*/
+
+.contenedor--form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 1em;
+    width: 80%;
+    background-color: #694872;
+    transform: translate(50% -50%);
+}
+.crud {
+    background-color: #694872;
+    margin-bottom: 2em;
+}
+
+/*---- Nosotros ----*/
+
+.caja--contacto{
+    width: 80%;
+}
+.caja--contacto img {
+    margin-bottom: 3em;
+}
+
+/*---- Ranking ----*/
+.cajamadre--ranking {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 auto;
+}
+
+.caja1--ranking{
+    border-radius: 30px;
+    width: 80%;
+    height: 50%;
+    margin: 40px;
+    background-color: #694872;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/*----  Usuario ----*/
+
+.caja2--usuario {
+    border-left: none;
+    padding-top: 2em;
+    border-top: solid white 1px;
+    width: 80%;
+    height: 500px;
+    margin-bottom: -100px;
+    margin-left: none;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+/*---- Contacto ----*/
+
+.formulario--nosotros{
+    margin: 0 auto;
+    border-radius: 30px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #694872;
+    margin: 3em auto;
+}
+
 }
 
 
