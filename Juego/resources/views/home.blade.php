@@ -10,15 +10,15 @@
             
             <h2 id="play">Pon a prueba tus conocimientos.</h2>
             
-
+            
             <form action="{{route('juego')}}" method="POST">
                 @csrf
-                <input type="submit" name="juego" value="JUGAR" class="boton-jugar">
+                <input type="submit" name="clasico" value="Clasico" class="boton-jugar">
             </form>
-            {{-- <form action="{{route ('juegoTiempo')}} ">
-            @csrf
-            <input type="submit" name="juegoTiempo" value="Jugar">
-            </form> --}}
+            <form action="{{url('/juegoTiempo/tiempo')}}" method="post" >
+                @csrf
+                <input type="submit" name="tiempo" value="Tiempo" class="boton-jugar" > 
+            </form>
         </article>
         
     </section>

@@ -32,7 +32,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/verRespuestas', 'RespuestaController@show');
 
 //Vista que me dice que perdi el juego
-Route::get('/final', function(){
+Route::get('/final', function () {
     return view('/final');
 });
 Route::post('/final', 'PreguntasController@siguiente');
@@ -41,13 +41,16 @@ Route::post('/final', 'PreguntasController@siguiente');
 Route::get('/perfil', 'UsuarioController@show');
 
 // Ruta del juego, una que te lleva a la vista y otra que te analiza las respuestas
-Route::post('/juego', 'PreguntasController@inicio');
 Route::get('/juego', 'PreguntasController@view')->name('juego');
+Route::post('/juego', 'PreguntasController@inicio');
 Route::post('/respuesta', 'PreguntasController@siguiente')->name('siguiente');
 
 
 //Juego con tiempo
-// Route::get('/juegoTiempo/juego', 'PreguntasController@vistaTiempo')->name('juegoTiempo');
+// Route::post('/juegoTiempo/tiempo', 'PreguntasController@vista');
+Route::get('/juegoTiempo/tiempo', 'PreguntasController@vistaTiempo');
+Route::post('/siguiente', 'PreguntasController@sig');
+
 
 
 
@@ -65,13 +68,13 @@ Route::get('/eliminar/{id}', 'PreguntasController@show');
 Route::get('/delete/{id}', 'PreguntasController@delete');
 
 //Tomi: Creo rutas para nosotros y contacto que por el momento solo retornan una vista
-Route::get('/contacto' , function (){
+Route::get('/contacto', function () {
     return view('contacto');
 });
-Route::get('/nosotros', function (){
+Route::get('/nosotros', function () {
     return view('nosotros');
 });
-Route::get('/frecuentes' , function(){
+Route::get('/frecuentes', function () {
     return view('faq');
 });
 

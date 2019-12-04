@@ -7,7 +7,7 @@
         <article class="cajamadre--ranking">
             <div class="caja1--ranking">
                 {{-- {{$usuarios->sortByDesc('puntos')}} --}}
-                @foreach ($usuarios as $usuario)
+                @foreach ($usuarios as $key => $usuario)
                 <ul type="none">
                     <li class="ranking--usuario">
                         <p class="nombres--ranking user1"> {{$usuario['nombre']}} 
