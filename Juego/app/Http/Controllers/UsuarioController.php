@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Auth;
 
 
 class UsuarioController extends Controller
@@ -12,8 +13,11 @@ class UsuarioController extends Controller
     public function show()
     {
         $usuarios = User::orderBy('puntos', 'desc')->take(3)->get();
+        $foto = Auth::user()->avatar;
+        dd($foto);
+
         // dd($usuarios);
-        return view('perfil')->with('usuarios', $usuarios);
+        return view('perfil')->with('usuarios', $usuarios, 'foto', $foto);
     }
     public function admin()
     {

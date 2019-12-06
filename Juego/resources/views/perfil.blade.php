@@ -7,7 +7,7 @@
         <article class="cajamadre--ranking">
             <div class="caja1--ranking">
                 {{-- {{$usuarios->sortByDesc('puntos')}} --}}
-                @foreach ($usuarios as $key => $usuario)
+                @foreach ($usuarios as $usuario)
                 <ul type="none">
                     <li class="ranking--usuario">
                         <p class="nombres--ranking user1"> {{$usuario['nombre']}} 
@@ -19,7 +19,7 @@
                 @endforeach
             </div>
             <div class="caja2--usuario">
-                <img class="img--usuario" width="230px" height="230px" src=""> 
+            <img class="img--usuario" width="230px" height="230px" src="storage/{{Auth::user()->$foto}}" alt="{{auth()->user()->nombre}}"> 
                 <p class="nombre--usuario"> {{Auth::user()->nombre}} </p>
                 <p class="puntos--usuario"> {{Auth::user()->puntos}}  </p>
                 <p class="puesto--usuario"> </p>

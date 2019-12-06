@@ -24,13 +24,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
-    public function inicio(Request $request){
-        $usuario = Auth::user();
-        if($request['juego']){
-            $usuario->puntos = $usuario->puntos +100;
-            $usuario->save();
-        }
-        return redirect('/juego')->with('usuario', $usuario);
-    }
 }
