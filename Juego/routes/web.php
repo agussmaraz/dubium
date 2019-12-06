@@ -37,18 +37,17 @@ Route::get('/final', function () {
 });
 Route::post('/final', 'PreguntasController@siguiente');
 
+
 // Ruta para el perfil 
 Route::get('/perfil', 'UsuarioController@show');
 
 // Ruta del juego, una que te lleva a la vista y otra que te analiza las respuestas
 Route::get('/juego', 'PreguntasController@view')->name('juego');
-Route::post('/juego', 'PreguntasController@inicio');
 Route::post('/respuesta', 'PreguntasController@siguiente')->name('siguiente');
 
 
 //Juego con tiempo
-// Route::post('/juegoTiempo/tiempo', 'PreguntasController@vista');
-Route::get('/juegoTiempo/tiempo', 'PreguntasController@vistaTiempo');
+Route::get('/juegoTiempo/tiempo', 'PreguntasController@view');
 Route::post('/siguiente', 'PreguntasController@sig');
 
 

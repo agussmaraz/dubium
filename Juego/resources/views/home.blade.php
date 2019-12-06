@@ -10,15 +10,11 @@
             
             <h2 id="play">Pon a prueba tus conocimientos.</h2>
             
+            <div class="caja-jugar">
+                <a href="/juego?tipo=clasico" class="boton-jugar">Clasico</a>
+                <a href="/juegoTiempo/tiempo?tipo=tiempo" class="boton-tiempo">Tiempo</a>
+            </div>
             
-            <form action="{{route('juego')}}" method="POST">
-                @csrf
-                <input type="submit" name="clasico" value="Clasico" class="boton-jugar">
-            </form>
-            <form action="{{url('/juegoTiempo/tiempo')}}" method="post" >
-                @csrf
-                <input type="submit" name="tiempo" value="Tiempo" class="boton-jugar" > 
-            </form>
         </article>
         
     </section>

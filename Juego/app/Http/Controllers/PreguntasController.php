@@ -11,32 +11,32 @@ use Illuminate\Support\Facades\App;
 
 class PreguntasController extends Controller
 {
-
-    //Funcion que reinicia los puntos y las vidas
-    public function inicio(Request $request)
+    public function view(Request $req)
     {
-        // dd($request);
         $puntosPartida = 0;
-        if ($request->clasico) {
+        if ($req) {
             $puntosPartida;
             session()->put('puntosPartida', $puntosPartida);
             $vidas = 3;
             session()->put('vidas', $vidas);
         }
-        if($request->clasico){
-            return redirect('/juego');
-        } if($request->tiempo){
-            return view('/juegoTiempo/tiempo');
+        $pregunta = Pregunta::inRandomOrder()->where('estado', 1)->first();
+        session()->put('pregunta', $pregunta);
+        if ($req->get('tipo') == 'clasico') {
+            return view('juego')->with('pregunta', $pregunta);
+        }
+        if ($req->get('tipo') == 'tiempo') {
+            return view('/juegoTiempo/tiempo')->with('pregunta', $pregunta);
         }
     }
+
 
     //Funcion para comparar las respuestas y depende si suma o resta puntos
     public function siguiente(Request $request)
     {
         $pregunta = Pregunta::inRandomOrder()->where('estado', 1)->first();
         $usuario = Auth::user();
-        // dd($pregunta->estado);
-        if ($request['respuesta-elegida'] === session()->get("pregunta")->respuesta['correcta']) {
+        if ($request['respuesta-elegida'] === session()->get('pregunta')->respuesta['correcta']) {
             session()->put('puntosPartida', session()->get('puntosPartida') + 10);
         } else if ($request['respuesta-elegida'] != session()->get("pregunta")->respuesta['correcta']) {
             session()->put('puntosPartida', session()->get('puntosPartida') - 5);
@@ -48,60 +48,27 @@ class PreguntasController extends Controller
             }
         }
         session()->put('pregunta', $pregunta);
-        return redirect('/juego');
+        return view('juego')->with('pregunta', $pregunta);
     }
 
-    // Te retorna la vista con las preguntas y las relaciones
-    public function view()
+
+    public function sig(Request $request)
     {
-        // dd($request);
-        $pregunta = Pregunta::inRandomOrder()->where('estado', 1)->first();
-        $respuestas = collect([
-            $pregunta->Respuesta['correcta'],
-            $pregunta->Respuesta['falsa1'],
-            $pregunta->Respuesta['falsa2']
-        ])->shuffle();
-        session()->put('pregunta', $pregunta);
-        return view('juego')->with('pregunta', $pregunta)->with('respuestas', $respuestas);
-    }
-
-
-    public function vistaTiempo() {
-        $preguntas = Pregunta::inRandomOrder()->where('estado', 1)->first();
-        session()->put('preguntas', $preguntas);
-        return view('juegoTiempo/tiempo')->with('preguntas', $preguntas);
-    }
-
-
-    public function sig(Request $request){
         $usuario = Auth::user();
-        $preguntas = Pregunta::inRandomOrder()->where('estado', 1)->first();
+        $pregunta = Pregunta::inRandomOrder()->where('estado', 1)->first();
         if ($request['respuesta-tiempo'] == session()->get('pregunta')->Respuesta['correcta']) {
-            session()->put('puntosPartida', session()->get('puntosPartida')+ 10);
-        } else if($request['respuesta-tiempo'] !== session()->get('pregunta')->Respuesta['correcta']){
-            session()->put('vidas', session()->get('vidas')- 1);
+            session()->put('puntosPartida', session()->get('puntosPartida') + 10);
+        } else if ($request['respuesta-tiempo'] !== session()->get('pregunta')->Respuesta['correcta']) {
+            session()->put('vidas', session()->get('vidas') - 1);
             session()->put('puntosPartida', session()->get('puntosPartida') - 5);
-        } if(session()->get('vidas') < 1 ){
+        }
+        if (session()->get('vidas') < 1) {
             $usuario->puntos = $usuario->puntos + session()->get('puntosPartida');
             $usuario->save();
             return redirect('final');
         }
-        return redirect('/juegoTiempo/tiempo');
+        return view('/juegoTiempo/tiempo')->with('pregunta', $pregunta);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

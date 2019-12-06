@@ -1,4 +1,4 @@
-s*{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -126,10 +126,26 @@ body {
     color: white;
     font-size: 30px;
     font-weight: bold;
-    margin-top: 30px;
     -webkit-box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);
     box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);  
+}
+.boton-tiempo {
+    border-radius: 50%;
+    padding: 55px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border: solid white;
+    background-color: #D85F75;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    -webkit-box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);
+    box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);  
+}
+.caja-jugar{
+    margin-top: 100px;
 }
 /*---------- registro.php --------- */
 .sec-regis{
