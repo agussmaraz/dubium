@@ -62,7 +62,7 @@
                 <label for="avatar" class="sub--texto">{{ __('Elegi un avatar') }}</label>
                 
                 <div>
-                    <input   id="avatar" type="file" class="in--regis" name="avatar" required autocomplete="new-avatar">
+                    <input id="avatar" type="file" class="in--regis" name="avatar" required autocomplete="new-avatar">
                 </div>
             </div>
         

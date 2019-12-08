@@ -18,8 +18,10 @@
                 
                 @endforeach
             </div>
+            {{-- @dd($foto); --}}
+            {{-- @dd(auth::user()->avatar); --}}
             <div class="caja2--usuario">
-            <img class="img--usuario" width="230px" height="230px" src="storage/{{Auth::user()->$foto}}" alt="{{auth()->user()->nombre}}"> 
+            <img class="img--usuario" width="230px" height="230px" src="/storage/{{Auth::user()->avatar}} " alt="{{auth()->user()->nombre}}"> 
                 <p class="nombre--usuario"> {{Auth::user()->nombre}} </p>
                 <p class="puntos--usuario"> {{Auth::user()->puntos}}  </p>
                 <p class="puesto--usuario"> </p>

@@ -54,7 +54,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'avatar' => ['file'],
         ]);
-        
+
         return $validates;
     }
 
@@ -67,14 +67,14 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $ruta = $data['avatar']->store("public");
-            $nombreArchivo = basename($ruta);
+        $nombreArchivo = basename($ruta);
         return User::create([
-            
+
             'nombre' => $data['nombre'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'avatar' => $nombreArchivo,
-            
+
 
         ]);
     }
