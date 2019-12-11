@@ -5,7 +5,13 @@
     <div class = "p--registro">{{ __('Registro') }}</div>
     <form method="POST" class="form--regis" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
-        
+        @if ($errors)
+            <ul class="errors">
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        @endif
         <div class="form">
             <label for="name" class="sub--texto">{{ __('Nombre') }}</label> 
             <div>

@@ -21,6 +21,24 @@ class RegisterController extends Controller
     |
     */
 
+    function validar_registro(Request $req) {
+        $reglas = [
+            "nombre" => "required|min:5:|max:45|unique:users, nombre|filled",
+            "email" => "required|min:5|max:45|unique:users, email|filled",
+            "password" => "required|min:6|max:45|unique:users, password|filled",
+            "avatar" => "required|filled"
+        ];
+        $mensajes = [
+            "filled" => "El campo :attribute no puede estar vacio.",
+            "required" => "El campo :attribute es oblidatorio.",
+            "min" => "El campo :attribute debe tener como mínimo :min caracteres.",
+            "max" => "El campo :attribute debe tener como máximo :max caracteres.",
+            "unique" => "El campo :attribute es invalido o ya esta registrado."
+        ];
+        $this->validate($req, $reglas, $mensajes);
+        return redirect('/register');
+    }
+
     use RegistersUsers;
 
     /**

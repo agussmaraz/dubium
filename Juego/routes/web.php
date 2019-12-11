@@ -67,9 +67,12 @@ Route::get('/delete/{id}', 'PreguntasController@delete');
 Route::get('/contacto' , function (){
     return view('contacto');
 });
+Route::post('/contacto','contactoController@mensaje_contacto');
+
 Route::get('/nosotros', function (){
     return view('nosotros');
 });
+
 Route::get('/frecuentes' , function(){
     return view('faq');
 });
