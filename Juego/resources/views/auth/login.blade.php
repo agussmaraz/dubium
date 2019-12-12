@@ -5,7 +5,13 @@
         <div class="col-md-8">
             <div class="card"> --}}
                 <div class="titulo--login">{{ __('Iniciar Sesion') }}</div>
-
+                @if ($errors)
+                <ul class="errors">
+                    @foreach ($errors->all() as $error)
+                     <li>{{$error}}</li>   
+                    @endforeach
+                </ul>
+                @endif
                 {{-- <div class="card-body"> --}}
                     <form method="POST" class="login--form" action="{{ route('login') }}">
                         @csrf

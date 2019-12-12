@@ -84,6 +84,22 @@ class PreguntasController extends Controller
 
     public function agregar(Request $request)
     {
+        $reglas = [
+            "pregunta" => "filled|min:5|max:45|unique:preguntas,pregunta",
+            "correcta" => "filled|min:5|max:45|unique:respuestas,correcta",
+            "falsa1" => "filled|min:5|max:45",
+            "falsa2" => "filled|min:5|max:5"
+        ];
+
+        $mensajes = [
+            "filled" => "El campo :attribute no puede estar vacio",
+            "min" => "El campo :attribute debe tener como mínimo :min caracteres",
+            "max" => "El campo :attribute debe tener como máxmimo :max caracteres",
+            "Unique" => "El campo :attribute ya se encuentra registrado"
+        ];
+
+        $this->validate($request, $reglas,$mensajes);   
+
         $nuevaRespuesta = new \App\Respuesta();
         $nuevaRespuesta->correcta = $request['correcta'];
         $nuevaRespuesta->falsa1 = $request['falsa1'];

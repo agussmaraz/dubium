@@ -47,7 +47,9 @@ body {
     position: absolute;
     color: white;
     top: 60%;
-    transform: translateX(60%) translateY(50%);
+    right: 50%;
+    width: 100%;
+    transform: translateX(50%) translateY(50%);
 }
 #logo path{
     stroke-dasharray: 6354.38232421875;
@@ -417,6 +419,13 @@ body {
     font-size: 3em;
     display: flex;
     justify-content: center;
+}
+.errors{
+    color: #DF8B8B;
+    list-style: none;
+    text-align: center;
+    margin-top: 35px;
+    font-size: 1.2em;
 }
 .crud {
     background-color: #694872;

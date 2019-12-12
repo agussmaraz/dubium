@@ -2,20 +2,27 @@
 @section('contenido')
 <section class="container">
     <article>
+        @if ($errors)
+        <ul class="errors">
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+        @endif
         <p class="titulo--crea"> Creá tus propias preguntas! </p>
         <form action="" method="post" class="contenedor--form">
             @csrf
             <div class="cajas--form">
                 <h3 class="subtitulos--crea1"> Escribi tu pregunta: </h3>
-                <input type="text" name="pregunta" class="preguntainput--crea" placeholder="Escribi una pregunta">
+                <input type="text" name="pregunta" class="preguntainput--crea" placeholder="Escribi una pregunta" value="{{old("pregunta")}}">
             </div>
             <div class="cajas--form">
                 <h3 class="subtitulos--crea2"> Escribi la respuesta: </h3>
-                <input type="text" name="correcta" placeholder="Escribi una respuesta" class="respuesta--crea">
+                <input type="text" name="correcta" placeholder="Escribi una respuesta" class="respuesta--crea" value="{{old("correcta")}}">
                 <br>
-                <input type="text" name="falsa1" placeholder="Escribi la respuesta correcta" class="respuesta--crea">
+                <input type="text" name="falsa1" placeholder="Escribi la respuesta correcta" class="respuesta--crea" value="{{old("falsa1")}}">
                 <br>
-                <input type="text" name="falsa2" placeholder="Escribi una respuesta" class="respuesta--crea">
+                <input type="text" name="falsa2" placeholder="Escribi una respuesta" class="respuesta--crea" value="{{old("falsa2")}}">
                 
                 <input type="submit" value="Guardar" class="boton--crea">
                 

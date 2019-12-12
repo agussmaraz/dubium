@@ -18,7 +18,28 @@ class LoginController extends Controller
     |
     */
 
+    //Validacion
+    function validar_login (Request $req) {
+    $reglas = [
+        "email" => "required|min:10|max:150|e-mail|unique:users,mail|filled",
+        "password" => "required|min:10|max:150|unique: users,password|filled"
+    ];
+
+    $mensajes = [
+        "filled" => "El campo :attribute no puede estar vacio.",
+        "e-mail" => "El campo :attribute no es un email.",
+        "required" => "El campo :attribute es oblidatorio.",
+        "min" => "El campo :attribute debe tener como mínimo :min caracteres.",
+        "max" => "El campo :attribute debe tener como máximo :max caracteres.",
+        "unique" => "El campo :attribute es invalido o ya esta registrado."
+    ];
+
+    $this->validate($req, $reglas, $mensajes);
+    return redirect('/login');
+    }
+
     use AuthenticatesUsers;
+    
 
     /**
      * Where to redirect users after login.
