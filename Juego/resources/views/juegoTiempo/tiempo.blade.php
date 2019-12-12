@@ -1,10 +1,10 @@
 @extends('layouts.plantillaA')
 @section('contenido')
 <section class="container">
-    {{-- <div class="cajita-puntos">
+    <div class="cajita-puntos">
         puntos:  {{session()->get('puntosPartida')}}
         vidas: {{session()->get('vidas')}}
-    </div> --}}
+    </div>
     <div class="cajita-juegoTiempo">     
         <ul type='none'>
             <li class="pregunta-juego">

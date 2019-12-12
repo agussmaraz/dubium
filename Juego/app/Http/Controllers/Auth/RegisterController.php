@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -66,10 +67,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $ruta = $data['avatar']->store("public");
+        $foto = $data['avatar'];
+        $path = $foto->getClientOriginalExtension();
+        $ruta = $foto->storeAs(
+            "public", $data['nombre']. '.' .$path
+        );
         $nombreArchivo = basename($ruta);
         return User::create([
-
             'nombre' => $data['nombre'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

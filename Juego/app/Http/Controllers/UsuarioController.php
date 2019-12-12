@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use Illuminate\Support\Facades\Hash;
-// use App\Http\Controllers\Auth;
 
 
 class UsuarioController extends Controller
@@ -72,5 +71,24 @@ class UsuarioController extends Controller
         $admin->save();
 
         return redirect('/admin/admins');
+    }
+
+    public function editar($id){
+        $usuario = User::find($id);
+        return view('/editarFoto')->with('usuario', $usuario);
+    }
+
+    public function updateFoto(Request $req, $id){
+        $usuario = User::find($id);
+        $foto = $req['avatar'];
+        $path = $foto->getClientOriginalExtension();
+        $ruta = $foto->storeAs(
+            "public", $usuario->nombre. '.' .$path
+        );
+        $nombreArchivo = basename($ruta);
+        $usuario->avatar = $nombreArchivo;
+        // dd($usuario->avatar);
+        $usuario->save();
+        return redirect('/perfil');
     }
 }

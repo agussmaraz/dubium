@@ -28,6 +28,8 @@ body {
 
 .content{
     height: 100vh;
+    /* display: flex; */
+    /* flex-flow: column; */
 }
 
 #logo{
@@ -35,12 +37,12 @@ body {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70%;
-    animation: fill 4s ease forwards;
+    width: 75%;
+    animation: fill 3s ease forwards;
     cursor: pointer;
+    /* font-weight: bold; */
     
 }
-
 #subtitulo{
     position: absolute;
     color: white;
@@ -50,7 +52,7 @@ body {
 #logo path{
     stroke-dasharray: 6354.38232421875;
     stroke-dashoffset: 6354.38232421875;
-    animation: line-anim 8s ease forwards;
+    animation: line-anim 12s ease forwards;
 }
 
 @keyframes line-anim{
@@ -59,19 +61,29 @@ body {
     }
 }
 @keyframes fill {
-    from{
+    0%{
         fill: transparent;
     }
-    to{
+    25% {
+        fill: #DF8B8B;
+    }
+    50% {
+        fill: #D88E4E;
+    }
+    75% {
+        fill: #A0D8C8;
+    }
+    100% {
         fill: white;
     }
+    
 }
 
 .links > a {
     color: #636b6f;
     padding: 10px 30px;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 900;
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -126,9 +138,9 @@ body {
     color: white;
     font-size: 30px;
     font-weight: bold;
-    -webkit-box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);
-    box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);  
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
 }
 .boton-tiempo {
     border-radius: 50%;
@@ -140,9 +152,9 @@ body {
     color: white;
     font-size: 30px;
     font-weight: bold;
-    -webkit-box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);
-    box-shadow: 4px 0px 67px -7px rgba(0,0,0,0.75);  
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75); 
 }
 .boton-tiempo:hover{
     color: white;
@@ -577,14 +589,28 @@ body {
     align-items: center;
 }
 .img--usuario {
-    /* border: solid black 2px; */
     border-radius: 50%;
-    /* padding: 1em; */
     background-color: #7F7D7C;
     margin-bottom: 2em;
     object-fit: cover;
 }
+.editarFoto {
+    border: solid #694872;
+    padding: 5px;
+    color: white;
+    background-color: #694872;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+}
+
+.editarFoto:hover {
+    color: white;
+    text-decoration: none;
+}
 .nombre--usuario {
+    margin-top: 10px;
     font-size: 2em;
     color: #D85F75;
 }
@@ -708,7 +734,7 @@ body {
 }
 .Primer--div{
     background: #694872;
-    width: 60%;
+    width: 45%;
     border-radius: 30px;
     margin: 0 auto;
     padding: 0.2em;
@@ -716,7 +742,6 @@ body {
 .p--dubium{
     font-size: 1.9em;
     color: #D85F75;
-    text-decoration: underline;
     text-align: center;
 }
 .primera--info {
@@ -734,7 +759,7 @@ body {
 .p-info {
     font-size: 1.9em;
     color: #A0D8C8;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-align: center;
 }
 .segunda--info {
@@ -745,24 +770,24 @@ body {
 .FAQ--tema{
     color: #D85F75;
     font-size: 1.9em;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-align: center;
 }
 .FAQ--ahorcado{
     color: #A0D8C8;
     font-size: 1.9em;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-align: center;
 }
 .FAQ--muerte{
     color: #D88E4E;
     font-size: 1.9em;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-align: center;
 }
 .FAQ--Info{
     color: white;
-    background: #694872;
+    /* background: #694872; */
     border-radius: 30px;
     width: 100%;
     margin: 0 auto;
@@ -843,9 +868,22 @@ body {
 #respuesta-3{
     transition: all 0.5s ease 0.9s;
 }
-
 .cajita-juego form.fade{
     opacity: 1;
+}
+.volverJugar{
+    color: white;
+    background-color: #D88E4E;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 20px;
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+}
+.volverJugar:hover {
+    color: white;
+    text-decoration: none;
 }
 /* -----------Juego Tiempo--------- */
 .cajita-juegoTiempo {
@@ -954,17 +992,17 @@ body {
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
     }
-
+    
     /*---- Nosotros ----*/
-
-.caja--contacto{
-    width: 80%;
-}
-
-.caja--contacto img {
-    margin-bottom: 3em;
-}
-
+    
+    .caja--contacto{
+        width: 80%;
+    }
+    
+    .caja--contacto img {
+        margin-bottom: 3em;
+    }
+    
 }
 
 /*---- Celulares ----*/
@@ -1000,164 +1038,164 @@ body {
     }
     
     /* ---------------Juego----------------- */
-
-
-.cajita-juego {
-    color: white;
-    display: flex;
-    flex-flow: column;
-    text-align: center;
-    width: 80%;
-    margin: 5% auto;
-    border-radius: 30px;
-    padding: 10px;
-}
-
-
-.pregunta-juego {
-    color: white;
-    width: 50%;
-    margin: 0 auto;
-    font-size: 2.5em;
-    padding: 10px;
-    overflow-wrap:	break-word;
-    /* background-color: #D85F75; */
-}
-.respuesta-juegoA {
-    font-size: 2em;
-    overflow-wrap:	break-word;
-    word-break:	normal;
-    background-color: #DF8B8B;
-    border-radius: 8px;
-    width: 50%;
-    margin: 10px auto;
-    color: white;
-}
-.respuesta-juegoB {
-    font-size: 2em;
-    overflow-wrap:	break-word;
-    background-color: #D88E4E ;
-    border-radius: 8px;
-    width: 50%;
-    margin: 10px auto;
-    color: white;
-}
-.respuesta-juegoC {
-    font-size: 2em;
-    overflow-wrap:	break-word;
-    background-color: #A0D8C8;
-    border-radius: 8px;
-    width: 50%;
-    margin: 10px auto;
-    color: white;
-}
-.small-juego {
-    color: white;
-    text-align: center;
-}
-.cajita-puntos {
-    color: white;
-}
-
-/* ---- Login ----*/
-
-.login--form{
-    border-radius: 30px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background-color: #694872;
-    margin: 3em auto;
-}
-
-/*---- Registro ----*/
-
-.form--regis{
-    margin: 0 auto;
-    border-radius: 30px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background-color: #694872;
-    margin: 3em auto;
-}
-
-/*---- Crea ----*/
-
-.contenedor--form {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    justify-content: center;
-    border-radius: 30px;
-    padding: 1em;
-    width: 80%;
-    background-color: #694872;
-    transform: translate(50% -50%);
-}
-.crud {
-    background-color: #694872;
-    margin-bottom: 2em;
-}
-
-/*---- Nosotros ----*/
-
-.caja--contacto{
-    width: 80%;
-}
-.caja--contacto img {
-    margin-bottom: 3em;
-}
-
-/*---- Ranking ----*/
-.cajamadre--ranking {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    margin: 0 auto;
-}
-
-.caja1--ranking{
-    border-radius: 30px;
-    width: 80%;
-    height: 50%;
-    margin: 40px;
-    background-color: #694872;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-/*----  Usuario ----*/
-
-.caja2--usuario {
-    border-left: none;
-    padding-top: 2em;
-    border-top: solid white 1px;
-    width: 80%;
-    height: 500px;
-    margin-bottom: -100px;
-    margin-left: none;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-}
-
-/*---- Contacto ----*/
-
-.formulario--nosotros{
-    margin: 0 auto;
-    border-radius: 30px;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background-color: #694872;
-    margin: 3em auto;
-}
-
+    
+    
+    .cajita-juego {
+        color: white;
+        display: flex;
+        flex-flow: column;
+        text-align: center;
+        width: 80%;
+        margin: 5% auto;
+        border-radius: 30px;
+        padding: 10px;
+    }
+    
+    
+    .pregunta-juego {
+        color: white;
+        width: 50%;
+        margin: 0 auto;
+        font-size: 2.5em;
+        padding: 10px;
+        overflow-wrap:	break-word;
+        /* background-color: #D85F75; */
+    }
+    .respuesta-juegoA {
+        font-size: 2em;
+        overflow-wrap:	break-word;
+        word-break:	normal;
+        background-color: #DF8B8B;
+        border-radius: 8px;
+        width: 50%;
+        margin: 10px auto;
+        color: white;
+    }
+    .respuesta-juegoB {
+        font-size: 2em;
+        overflow-wrap:	break-word;
+        background-color: #D88E4E ;
+        border-radius: 8px;
+        width: 50%;
+        margin: 10px auto;
+        color: white;
+    }
+    .respuesta-juegoC {
+        font-size: 2em;
+        overflow-wrap:	break-word;
+        background-color: #A0D8C8;
+        border-radius: 8px;
+        width: 50%;
+        margin: 10px auto;
+        color: white;
+    }
+    .small-juego {
+        color: white;
+        text-align: center;
+    }
+    .cajita-puntos {
+        color: white;
+    }
+    
+    /* ---- Login ----*/
+    
+    .login--form{
+        border-radius: 30px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background-color: #694872;
+        margin: 3em auto;
+    }
+    
+    /*---- Registro ----*/
+    
+    .form--regis{
+        margin: 0 auto;
+        border-radius: 30px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background-color: #694872;
+        margin: 3em auto;
+    }
+    
+    /*---- Crea ----*/
+    
+    .contenedor--form {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        justify-content: center;
+        border-radius: 30px;
+        padding: 1em;
+        width: 80%;
+        background-color: #694872;
+        transform: translate(50% -50%);
+    }
+    .crud {
+        background-color: #694872;
+        margin-bottom: 2em;
+    }
+    
+    /*---- Nosotros ----*/
+    
+    .caja--contacto{
+        width: 80%;
+    }
+    .caja--contacto img {
+        margin-bottom: 3em;
+    }
+    
+    /*---- Ranking ----*/
+    .cajamadre--ranking {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        margin: 0 auto;
+    }
+    
+    .caja1--ranking{
+        border-radius: 30px;
+        width: 80%;
+        height: 50%;
+        margin: 40px;
+        background-color: #694872;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    /*----  Usuario ----*/
+    
+    .caja2--usuario {
+        border-left: none;
+        padding-top: 2em;
+        border-top: solid white 1px;
+        width: 80%;
+        height: 500px;
+        margin-bottom: -100px;
+        margin-left: none;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    
+    /*---- Contacto ----*/
+    
+    .formulario--nosotros{
+        margin: 0 auto;
+        border-radius: 30px;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background-color: #694872;
+        margin: 3em auto;
+    }
+    
 }
 
 

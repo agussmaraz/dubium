@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Auth;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -40,5 +41,13 @@ class User extends Authenticatable
     public function pregunta()
     {
         return $this->hasMany('App\Pregunta');
+    }
+    public function isAdmin($role)
+    {
+        $role = Auth()->user()->perfil;
+        if($role === 1){
+            return redirect('/home');
+        }
+        // return User::where('role', $role)->get();
     }
 }

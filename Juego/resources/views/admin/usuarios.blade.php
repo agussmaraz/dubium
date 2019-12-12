@@ -30,14 +30,21 @@
                     <td>{{$value->nombre}} </td>
                     <td>{{$value->email}} </td>
                     @if($value->perfil != 0)
-                    <td>
-                        Administrador
-                        <a href="/admin/editar/{{$value->id}}"><i class="fas fa-edit"></i></a>    
+                    <td class="admin">
+                        <span class="dato">
+                            Administrador
+                        </span>
+                        {{-- <a href="/admin/editar/{{$value->id}}"><i class="fas fa-edit editarAdmin"></i></a> --}}
+                        <button href="/admin/editar/{{$value->id}}"><i class="fas fa-edit editarAdmin"></i></button>    
                     </td>
                     @else 
-                    <td>
-                        Usuario
-                        <a href="/admin/editar/{{$value->id}}"><i class="fas fa-edit"></i></a>    
+                    <td class="admin">
+                        <span class="dato">
+                            Usuario
+                        </span>
+                        {{-- <a href="/admin/editar/{{$value->id}}"><i class="fas fa-edit editarAdmin"></i></a> --}}
+                        <button href="/admin/editar/{{$value->id}}"><i class="fas fa-edit editarAdmin"></i></button>    
+                        
                     </td>
                     @endif
                     <td>{{$value->avatar}} </td>
