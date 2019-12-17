@@ -26,7 +26,21 @@
                     <img class="img--usuario" width="230px" height="230px" src="/storage/user.png" alt="">
                     @endif
                     
-                    
+                    {{-- <section class="form-editar">
+                        <h4 class="p-foto">
+                            Hola {{Auth::user()->nombre}}
+                        </h4>
+                        <form action="" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div>
+                                <label for="" class="label"> Elige un avatar: </label>
+                            </div>
+                            <div>
+                                <input type="file" name="avatar">
+                            </div>
+                            <input type="submit">
+                        </form>
+                    </section> --}}
                     
                     <input type="hidden" id="{{auth::user()->id}}" class="id">
                     {{-- <input type="hidden" id="token" value="@csrf" class="id"> --}}

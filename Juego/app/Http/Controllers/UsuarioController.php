@@ -37,10 +37,10 @@ class UsuarioController extends Controller
         if (isset($request)) {
             $usuario = User::find($id);
             if ($usuario->perfil == 0) {
-                $usuario->perfil = $usuario->perfil + 1;
+                $usuario->perfil =  1;
                 $usuario->save();
             } else {
-                $usuario->perfil = $usuario->perfil - 1;
+                $usuario->perfil = 0;
                 $usuario->save();
             }
         }
@@ -73,17 +73,20 @@ class UsuarioController extends Controller
         return redirect('/admin/admins');
     }
 
-    public function editar($id){
+    public function editar($id)
+    {
         $usuario = User::find($id);
         return view('/editarFoto')->with('usuario', $usuario);
     }
 
-    public function updateFoto(Request $req, $id){
+    public function updateFoto(Request $req, $id)
+    {
         $usuario = User::find($id);
         $foto = $req['avatar'];
         $path = $foto->getClientOriginalExtension();
         $ruta = $foto->storeAs(
-            "public", $usuario->nombre. '.' .$path
+            "public",
+            $usuario->nombre . '.' . $path
         );
         $nombreArchivo = basename($ruta);
         $usuario->avatar = $nombreArchivo;
@@ -91,4 +94,21 @@ class UsuarioController extends Controller
         $usuario->save();
         return redirect('/perfil');
     }
+
+    public function perfil($id)
+    {
+        $user = User::find($id);
+        $usuario = $user->perfil;
+        //    $usuario = Auth::user()->perfil;
+        if ($usuario === 0) {
+            $usuario = 1;
+            // $usuario->update();
+        } else {
+            $usuario = 0;
+            // $usuario->update();
+        }
+        $user->perfil = $usuario;
+        $user->save();
+        return response()->json($usuario);
+    }   
 }

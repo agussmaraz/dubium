@@ -24,34 +24,27 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($usuarios as $key => $value) 
+                @foreach ($usuarios as $user) 
                 <tr>
-                    <th scope="row"> {{$value->created_at}} </th>
-                    <td>{{$value->nombre}} </td>
-                    <td>{{$value->email}} </td>
-                    @if($value->perfil != 0)
+                    <th scope="row"> {{$user->created_at}} </th>
+                    <td>{{$user->nombre}} </td>
+                    <td>{{$user->email}} </td>
+                    
                     <td class="admin">
-                        <span class="dato">
+                        <span class="dato" id="{{$user->perfil}}">
+                            @if($user->perfil != 0)
                             Administrador
-                        </span>
-                        {{-- <a href="/admin/editar/{{$value->id}}"><i class="fas fa-edit editarAdmin"></i></a> --}}
-                        <button href="/admin/editar/{{$value->id}}"><i class="fas fa-edit editarAdmin"></i></button>    
-                    </td>
-                    @else 
-                    <td class="admin">
-                        <span class="dato">
+                            @else
                             Usuario
+                            @endif
                         </span>
-                        {{-- <a href="/admin/editar/{{$value->id}}"><i class="fas fa-edit editarAdmin"></i></a> --}}
-                        <button href="/admin/editar/{{$value->id}}"><i class="fas fa-edit editarAdmin"></i></button>    
-                        
+                        <button class="editarAdmin" id="{{$user->id}}" ><i class="fas fa-edit"></i></button>
                     </td>
-                    @endif
-                    <td>{{$value->avatar}} </td>
+                    <td>{{$user->avatar}} </td>
                     
                     {{-- <td> </td> --}}
                     <td>
-                        <a href="/admin/eliminar/{{$value->id}}"><i class="fas fa-trash"></i></a>
+                        <a href="/admin/eliminar/{{$user->id}}"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr>
                 @endforeach

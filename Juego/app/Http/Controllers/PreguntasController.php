@@ -175,4 +175,14 @@ class PreguntasController extends Controller
         $pregunta->delete();
         return redirect('/admin/preguntas');
     }
+
+    public function prueba(){
+        return response()->json(["data" => "<h1>hola</h1>"]);
+        
+        // return redirect('/admin/preguntas');
+    }
+
+
+
+
 }

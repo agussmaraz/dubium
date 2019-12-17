@@ -910,6 +910,11 @@ body {
     display: flex;
     justify-content: center;
 }
+.cajaTiempo {
+    color: white;
+    font-size: 50px;
+    /* background-color: ; */
+}
 
 
 /* ------------Final------------- */

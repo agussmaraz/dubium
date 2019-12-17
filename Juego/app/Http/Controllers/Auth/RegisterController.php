@@ -40,6 +40,7 @@ class RegisterController extends Controller
         return redirect('/register');
     }
 
+
     use RegistersUsers;
 
     /**

@@ -13,6 +13,7 @@
 //Ruta que retorna la vista de welcome
 
 use App\Http\Controllers\PreguntasController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -87,6 +88,9 @@ Route::get('/admin/admins', 'UsuarioController@nuevo')->middleware('admin:0');
 Route::post('/admin/admins', 'UsuarioController@agregar')->middleware('admin:0');
 Route::get('/admin/aprobar/{id}', 'PreguntasController@aprobar')->middleware('admin:0');
 Route::get('/admin/descartar/{id}', 'PreguntasController@descartar')->middleware('admin:0');
+Route::get('/admin/perfil/{id}', 'UsuarioController@perfil');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/prueba', 'PreguntasController@prueba');
