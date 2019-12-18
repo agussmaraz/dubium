@@ -61,17 +61,17 @@ class PreguntasController extends Controller
         if ($request['respuesta-tiempo'] === session()->get('pregunta')->Respuesta['correcta']) {
             session()->put('puntosPartida', session()->get('puntosPartida') + 10);
         } else if ($request['respuesta-tiempo'] != session()->get('pregunta')->Respuesta['correcta']) {
-            session()->put('puntosPartida', session()->get('puntosPartida') - 5);
-            session()->put('vidas', session()->get('vidas') - 1);
-            if (session()->get('vidas') < 1) {
-                $usuario->puntos = $usuario->puntos + session()->get('puntosPartida');
-                $usuario->save();
+            // session()->put('puntosPartida', session()->get('puntosPartida') - 5);
+            // session()->put('vidas', session()->get('vidas') - 1);
+            // if (session()->get('vidas') < 1) {
+            //     $usuario->puntos = $usuario->puntos + session()->get('puntosPartida');
+            //     $usuario->save();
                 return redirect('final');
             }
-        }
-        session()->put('pregunta', $pregunta);
+         
+         session()->put('pregunta', $pregunta);
         return view('/juegoTiempo/tiempo')->with('pregunta', $pregunta);
-    }
+}
 
 
 

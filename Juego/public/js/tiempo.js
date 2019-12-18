@@ -15,10 +15,10 @@ function carga() {
         function () {
             if (contador_s == 5) {
                 contador_s = contador_s - 1;
-                // contador_m++;
+                
             }
             if (contador_s == 0) {
-                contador_s = 0;
+                break;
             }
             // min.innerHTML = contador_m;
             seg.innerHTML = contador_s;
