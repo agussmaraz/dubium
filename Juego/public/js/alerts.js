@@ -1,77 +1,138 @@
 
-
-
-
-
+// Funcion para editar el perfil de los usuarios
 let cuerpo = document.body;
 let button = document.querySelectorAll('.editarAdmin');
-// let cuadro = document.querySelectorAll('.dato');
-// console.log(button);
+
 button.forEach(element => element.addEventListener('click', function (evento) {
     cambiar(this.id, evento)
 }))
-
 function cambiar(id, evento) {
-    fetch('http://localhost:8000/admin/perfil/' + id)
+    Swal.fire({
+        title: 'Seguro que quieres cambiar el perfil?',
+        // text: "Recuerda que no lo puedes revertir",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si'
+    })
+    .then((result) => {
+        if (result.value) {
+            fetch('http://localhost:8000/admin/perfil/' + id)
         .then(function (resp) {
             return resp.json();
         })
         .then(function (data) {
             perfil(data, evento)
-            // console.log(clickeado)
+            Swal.fire(
+                'Exito',
+                'Ha sido cambiado exito',
+                'success'
+            )
         })
-
-        function perfil(data, evento) {
-            var clickeado = evento.target;
-            console.log(evento);
-            var padre = clickeado.closest('.admin');
-            var dato = padre.querySelector('.dato');
-            if (data == 0) {
-                dato.innerHTML = "Usuario";
-                // console.log(padre)
-            } else {
-                dato.innerHTML = "Administrador"
-            }
-
         }
-
-
-
-            // let dato = document.querySelectorAll('.dato')   
-            //     if (data == 0) {
-            //         document.querySelector('.dato').innerHTML = 'Usuario'
-            //     }
-            //     else {
-            //         document.querySelector('.dato').innerHTML = 'Administrador'
-            //     }
-
-
-    // console.log(data);
+    })
+ 
+}
+function perfil(data, evento) {
+    var clickeado = evento.target;
+    console.log(evento);
+    var padre = clickeado.closest('.admin');
+    var dato = padre.querySelector('.dato');
+    if (data == 0) {
+        dato.innerHTML = "Usuario";
+    } else {
+        dato.innerHTML = "Administrador"
+    }
 
 }
 
-// let cuadro = document.querySelectorAll('.admin');
-// cuadro.forEach(element.addEventListener('click', ) => { 
-// });
-
-// cuadro.forEach(element => element.addEventListener('click', alerta())
-// );
-// function alerta(evento) {
-//     var clickeado = evento.target;
-//     var padre = clickeado.closest('.admin');
-//     console.log(clickeado)
-//     var dato = padre.querySelector('.dato');
-//     if (dato.innerText.trim() == "Administrador") {
-//         dato.innerHTML = "Usuario";
-//     } else {
-//         dato.innerHTML = "Administrador"
-//     }
-//     console.log(dato.innerText);
-//     alert('Estas seguro?');
-//     console.log(this);
-// }
 
 
+// Funcion para eliminar usuarios/administradores con javascript
+let buttonDelete = document.querySelectorAll('.eliminarAdmin');
+console.log(buttonDelete)
+buttonDelete.forEach(element => element.addEventListener('click', function (evento) {
+    eliminar(this.id, evento)
+}))
+function eliminar(id, evento) {
+    Swal.fire({
+        title: 'Seguro que quieres eliminarlo?',
+        text: "Recuerda que no lo puedes revertir",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminalo'
+    })
+        .then((result) => {
+console.log(result);
+            if (result.value) {
+                fetch('http://localhost:8000/admin/delete/' + id)
+                    .then(function (resp) {
+                        return resp.json();
+                    })
+                    .then(function (data) {
+                        eliminarDato(data, evento)
+                        Swal.fire(
+                            'Eliminado!',
+                            'Ha sido eliminado con exito',
+                            'success'
+                        )
+                    })
+                
+            }
+        })
+}
+function eliminarDato(data, evento){
+    var clickeado = evento.target;
+    // console.log(clickeado)
+    var node = clickeado.parentNode
+    parentNode = node.parentNode
+    padre = parentNode.parentNode
+    // console.log(padre);
+    padre.remove()
+}
 
+let eliminarPregunta = document.querySelectorAll('.eliminarPreg');
+// console.log(buttonDelete)
+eliminarPregunta.forEach(element => element.addEventListener('click', function (evento) {
+    eliminarP(this.id, evento)
+}))
+function eliminarP(id, evento) {
+    Swal.fire({
+        title: 'Seguro que quieres eliminarlo?',
+        text: "Recuerda que no lo puedes revertir",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminalo'
+    })
+        .then((result) => {
 
-
+            if (result.value) {
+                fetch('http://localhost:8000/delete/' + id)
+                    .then(function (resp) {
+                        return resp.json();
+                    })
+                    .then(function (data) {
+                        eliminarPreg(data, evento)
+                        Swal.fire(
+                            'Eliminado!',
+                            'Ha sido eliminado con exito',
+                            'success'
+                        )
+                    })
+                
+            }
+        })
+}
+function eliminarPreg(data, evento){
+    var clickeado = evento.target;
+    console.log(clickeado)
+    var node = clickeado.parentNode
+    parentNode = node.parentNode
+    padre = parentNode.parentNode
+    padre.remove()
+}

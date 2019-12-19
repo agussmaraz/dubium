@@ -61,7 +61,6 @@ Route::get('/crea', 'PreguntasController@crud');
 Route::get('/editar/{id}', 'PreguntasController@editar');
 Route::post('/editar/{id}', 'PreguntasController@update');
 Route::get('/eliminar/{id}', 'PreguntasController@show');
-Route::get('/delete/{id}', 'PreguntasController@delete');
 
 //Tomi: Creo rutas para nosotros y contacto que por el momento solo retornan una vista
 Route::get('/contacto' , function (){
@@ -82,13 +81,16 @@ Route::get('/admin/preguntas', 'PreguntasController@admin')->middleware('admin:0
 Route::get('/admin/usuarios', 'UsuarioController@admin')->middleware('admin:0');
 Route::get('/admin/editar/{id}', 'UsuarioController@showEdit')->middleware('admin:0');
 Route::post('/admin/editar/{id}', 'UsuarioController@update')->middleware('admin:0');
-Route::get('/admin/eliminar/{id}', 'UsuarioController@showDelete')->middleware('admin:0');
-Route::get('/admin/delete/{id}', 'UsuarioController@delete')->middleware('admin:0');
 Route::get('/admin/admins', 'UsuarioController@nuevo')->middleware('admin:0');
 Route::post('/admin/admins', 'UsuarioController@agregar')->middleware('admin:0');
 Route::get('/admin/aprobar/{id}', 'PreguntasController@aprobar')->middleware('admin:0');
 Route::get('/admin/descartar/{id}', 'PreguntasController@descartar')->middleware('admin:0');
+// Rutas de que contienen javascript para los datos del usuario
 Route::get('/admin/perfil/{id}', 'UsuarioController@perfil');
+Route::get('/admin/delete/{id}', 'UsuarioController@delete');
+//Rutas con javascript para las preguntas
+Route::get('/delete/{id}', 'PreguntasController@delete');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

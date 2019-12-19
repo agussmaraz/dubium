@@ -62,7 +62,7 @@
                     @endif
                     <td>
                         <a href="editar/{{$pregunta->id}}"><i class="fas fa-edit"></i></a>    
-                        <a href="eliminar/{{$pregunta->id}}"><i class="fas fa-trash"></i></a>
+                        <button class="eliminarPreg" id="{{$pregunta->id}}"><i class="fas fa-trash"></i></button>
                     </td>
                 </tr>
                 @endforeach

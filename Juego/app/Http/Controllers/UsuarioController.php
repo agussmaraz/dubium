@@ -14,9 +14,7 @@ class UsuarioController extends Controller
     {
         $usuarios = User::orderBy('puntos', 'desc')->take(3)->get();
         $foto = Auth::user()->avatar;
-        // dd($foto);
-
-        // dd($usuarios);
+        
         return view('perfil')->with('usuarios', $usuarios)->with('foto', $foto);
     }
     public function admin()
@@ -46,17 +44,14 @@ class UsuarioController extends Controller
         }
         return redirect('/admin/usuarios');
     }
-    public function showDelete($id)
-    {
-        $usuario = User::find($id);
-        return view('/admin/eliminar')->with('usuario', $usuario);
-    }
+  
     public function delete($id)
     {
         $usuario = User::find($id);
         $usuario->delete();
-        return redirect('/admin/usuarios');
+        return response()->json($usuario);
     }
+    
     public function nuevo()
     {
         return view('/admin/admins');
@@ -75,12 +70,14 @@ class UsuarioController extends Controller
 
     public function editar($id)
     {
+        // dd($id);
         $usuario = User::find($id);
         return view('/editarFoto')->with('usuario', $usuario);
     }
 
     public function updateFoto(Request $req, $id)
     {
+        // dd($req);
         $usuario = User::find($id);
         $foto = $req['avatar'];
         $path = $foto->getClientOriginalExtension();

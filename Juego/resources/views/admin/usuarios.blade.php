@@ -10,7 +10,7 @@
     </header>
     <article class="crud-admin ">
         <h3 class="titulo-admin">
-            Registro de preguntas
+            Registro de usuarios
         </h3>
         <table class="table text-light table-bordered crud-admin ">
             <thead class="bg-transparent">
@@ -38,13 +38,15 @@
                             Usuario
                             @endif
                         </span>
-                        <button class="editarAdmin" id="{{$user->id}}" ><i class="fas fa-edit"></i></button>
+                        <button class="editarAdmin" id="{{$user->id}}" ><i class="fas fa-edit icono"></i></button>
                     </td>
                     <td>{{$user->avatar}} </td>
                     
                     {{-- <td> </td> --}}
                     <td>
-                        <a href="/admin/eliminar/{{$user->id}}"><i class="fas fa-trash"></i></a>
+                        {{-- <a href="/admin/eliminar/{{$user->id}} class='eliminarAdmin'"><i class="fas fa-trash"></i></a> --}}
+                        <button class='eliminarAdmin' id="{{$user->id}}"><i class="fas fa-trash icono"></i></button>
+                        
                     </td>
                 </tr>
                 @endforeach

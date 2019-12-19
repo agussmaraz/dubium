@@ -21,6 +21,7 @@
             <tbody>
                 <tr>
                     @foreach($preguntas as $key => $pregunta)
+                    {{-- @dd($pregunta->id) --}}
                     <td scope="row">{{$pregunta->User['email']}}</td>
                     <td>{{$pregunta->pregunta}}</td>
                     <td> {{$pregunta->Respuesta['correcta']}} </td>
@@ -33,7 +34,7 @@
                     @endif
                     @if($pregunta->estado == 1)
                     <td>
-                        <a href="/delete/{{$pregunta->id}} "><i class="fas fa-trash icono"></i></a>
+                    <button class="eliminarPreg" id="{{$pregunta->id}}"><i class="fas fa-trash icono"></i></button>
                     </td>
                     @else
                     <td>

@@ -20,17 +20,17 @@
                 </li>  
                 <form action="{{url('respuesta')}}" method="post" id="respuesta-1">
                     @csrf
-                    <input type="submit" name="respuesta-elegida" value="{{$pregunta->respuesta['correcta']}}" class="respuesta-juegoA">
+                <input type="submit" name="respuesta-elegida" value="{{$respuestas[0]}}" class="respuesta-juegoA">
                 </form>
-                
+                {{-- @dd($respuestas) --}}
                 <form action="{{url('respuesta')}}" method="post" id="respuesta-2">
                     @csrf
-                    <input type="submit" name="respuesta-elegida" value="{{$pregunta->respuesta['falsa1']}}" class="respuesta-juegoB">
+                    <input type="submit" name="respuesta-elegida" value="{{$respuestas[1]}}" class="respuesta-juegoB">
                 </form>
                 
                 <form action="{{url('respuesta')}} " method="post" id="respuesta-3">
                     @csrf
-                    <input type="submit" name="respuesta-elegida" value="{{$pregunta->respuesta['falsa2']}}" class="respuesta-juegoC">
+                    <input type="submit" name="respuesta-elegida" value="{{$respuestas[2]}}" class="respuesta-juegoC">
                 </form>
                 
             </ul>

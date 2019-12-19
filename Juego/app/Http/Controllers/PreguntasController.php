@@ -22,12 +22,21 @@ class PreguntasController extends Controller
             session()->put('vidas', $vidas);
         }
         $pregunta = Pregunta::inRandomOrder()->where('estado', 1)->first();
+        // dd($pregunta->Respuesta['correcta']);
+        
+        $respuestas = collect([
+            $pregunta->Respuesta['correcta'],
+            $pregunta->Respuesta['falsa1'],
+            $pregunta->Respuesta['falsa2']
+       ] );
+        $respuestas = $respuestas->shuffle();
         session()->put('pregunta', $pregunta);
+        
         if ($req->get('tipo') == 'clasico') {
-            return view('juego')->with('pregunta', $pregunta);
+            return view('juego')->with('pregunta', $pregunta)->with('respuestas', $respuestas);
         }
         if ($req->get('tipo') == 'tiempo') {
-            return view('/juegoTiempo/tiempo')->with('pregunta', $pregunta);
+            return view('/juegoTiempo/tiempo')->with('pregunta', $pregunta)->with('respuestas', $respuestas);
         }
     }
 
@@ -37,9 +46,16 @@ class PreguntasController extends Controller
     {
         $pregunta = Pregunta::inRandomOrder()->where('estado', 1)->first();
         $usuario = Auth::user();
-        if ($request['respuesta-elegida'] === session()->get('pregunta')->respuesta['correcta']) {
+        $respuestas = collect([
+            $pregunta->Respuesta['correcta'],
+            $pregunta->Respuesta['falsa1'],
+            $pregunta->Respuesta['falsa2']
+       ] );
+        $respuestas = $respuestas->shuffle();
+        // dd(session()->get('respuestas')['correcta']);
+        if ($request['respuesta-elegida'] === session()->get('pregunta')->Respuesta['correcta']) {
             session()->put('puntosPartida', session()->get('puntosPartida') + 10);
-        } else if ($request['respuesta-elegida'] != session()->get("pregunta")->respuesta['correcta']) {
+        } else if ($request['respuesta-elegida'] != session()->get("pregunta")->Respuesta['correcta']) {
             session()->put('puntosPartida', session()->get('puntosPartida') - 5);
             session()->put('vidas', session()->get('vidas') - 1);
             if (session()->get('vidas') < 1) {
@@ -49,7 +65,7 @@ class PreguntasController extends Controller
             }
         }
         session()->put('pregunta', $pregunta);
-        return view('juego')->with('pregunta', $pregunta);
+        return view('juego')->with('pregunta', $pregunta)->with('respuestas', $respuestas);
     }
 
   
@@ -57,20 +73,27 @@ class PreguntasController extends Controller
     public function sig(Request $request)
     {
         $usuario = Auth::user();
-        $pregunta = Pregunta::inRandomOrder()->where('estado', 1)->first();
+        $pregunta = Pregunta::inRandomOrder()->where('estado', 1)->first();        
+        $respuestas = collect([
+            $pregunta->Respuesta['correcta'],
+            $pregunta->Respuesta['falsa1'],
+            $pregunta->Respuesta['falsa2']
+       ] );
+        $respuestas = $respuestas->shuffle();
+        
         if ($request['respuesta-tiempo'] === session()->get('pregunta')->Respuesta['correcta']) {
             session()->put('puntosPartida', session()->get('puntosPartida') + 10);
         } else if ($request['respuesta-tiempo'] != session()->get('pregunta')->Respuesta['correcta']) {
-            // session()->put('puntosPartida', session()->get('puntosPartida') - 5);
+            session()->put('puntosPartida', session()->get('puntosPartida') - 5);
             // session()->put('vidas', session()->get('vidas') - 1);
             // if (session()->get('vidas') < 1) {
-            //     $usuario->puntos = $usuario->puntos + session()->get('puntosPartida');
+                $usuario->puntos = $usuario->puntos + session()->get('puntosPartida');
             //     $usuario->save();
                 return redirect('final');
             }
          
          session()->put('pregunta', $pregunta);
-        return view('/juegoTiempo/tiempo')->with('pregunta', $pregunta);
+        return view('/juegoTiempo/tiempo')->with('pregunta', $pregunta)->with('respuestas', $respuestas);
 }
 
 
@@ -85,10 +108,10 @@ class PreguntasController extends Controller
     public function agregar(Request $request)
     {
         $reglas = [
-            "pregunta" => "filled|min:5|max:45|unique:preguntas,pregunta",
-            "correcta" => "filled|min:5|max:45|unique:respuestas,correcta",
-            "falsa1" => "filled|min:5|max:45",
-            "falsa2" => "filled|min:5|max:5"
+            "pregunta" => "filled|min:2|max:100|unique:preguntas,pregunta",
+            "correcta" => "filled|min:2|max:45|unique:respuestas,correcta",
+            "falsa1" => "filled|min:2|max:100",
+            "falsa2" => "filled|min:2|max:100"
         ];
 
         $mensajes = [
@@ -145,11 +168,12 @@ class PreguntasController extends Controller
         $pregunta = Pregunta::find($id);
         return view('/eliminar')->with('pregunta', $pregunta);
     }
+
     public function delete($id)
     {
         $pregunta = Pregunta::find($id);
         $pregunta->delete();
-        return redirect('/crea');
+        return response()->json($pregunta);
     }
 
     //Retorna a la vista todas las preguntas
@@ -175,13 +199,6 @@ class PreguntasController extends Controller
         $pregunta->delete();
         return redirect('/admin/preguntas');
     }
-
-    public function prueba(){
-        return response()->json(["data" => "<h1>hola</h1>"]);
-        
-        // return redirect('/admin/preguntas');
-    }
-
 
 
 

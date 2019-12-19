@@ -5,8 +5,8 @@
         <h1 class="titulo--ranking"> Ranking </h1>
         <article class="cajamadre--ranking">
             <div class="caja1--ranking">
-                {{-- {{$usuarios->sortByDesc('puntos')}} --}}
                 @foreach ($usuarios as $usuario)
+                {{-- @dd($usuario) --}}
                 <ul type="none">
                     <li class="ranking--usuario">
                         <p class="nombres--ranking user1"> {{$usuario['nombre']}} 
@@ -18,37 +18,18 @@
                 @endforeach
             </div>
             <div class="caja2--usuario">
-                    
-                    @if('/storage/Auth::user()->avatar' !== null)
-                    <img class="img--usuario" width="230px" height="230px" src="/storage/{{Auth::user()->avatar}} " alt="{{auth()->user()->nombre}}">
-                    @else
-                    {{-- @if('/storage/Auth::user()->avatar' == 0) --}}
-                    <img class="img--usuario" width="230px" height="230px" src="/storage/user.png" alt="">
-                    @endif
-                    
-                    {{-- <section class="form-editar">
-                        <h4 class="p-foto">
-                            Hola {{Auth::user()->nombre}}
-                        </h4>
-                        <form action="" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <div>
-                                <label for="" class="label"> Elige un avatar: </label>
-                            </div>
-                            <div>
-                                <input type="file" name="avatar">
-                            </div>
-                            <input type="submit">
-                        </form>
-                    </section> --}}
-                    
-                    <input type="hidden" id="{{auth::user()->id}}" class="id">
-                    {{-- <input type="hidden" id="token" value="@csrf" class="id"> --}}
-                    <a href="/editarFoto/{{auth::user()->id}}" class="editarFoto"> Editar foto de perfil </a>
-                    {{-- <button href="/editarFoto/{{auth::user()->id}}" class="editarFoto"> Editar foto de perfil </button> --}}
-                    <p class="nombre--usuario"> {{Auth::user()->nombre}} </p>
-                    <p class="puntos--usuario"> {{Auth::user()->puntos}}  </p>
-                    <p class="puesto--usuario"> </p>
-                </div>
-            </article>
-            @endsection
+                
+                @if('/storage/Auth::user()->avatar' !== null)
+                <img class="img--usuario" width="230px" height="230px" src="/storage/{{Auth::user()->avatar}} " alt="{{auth()->user()->nombre}}">
+                @else
+                <img class="img--usuario" width="230px" height="230px" src="/storage/user.png" alt="">
+                @endif
+                
+                {{-- <button href="/perfil/{{auth::user()->id}}" class="editarFoto"> Editar foto de perfil </button> --}}
+                <a href="/editarFoto/{{auth::user()->id}}" class="editarFoto"> Editar foto de perfil </a>
+                <p class="nombre--usuario"> {{Auth::user()->nombre}} </p>
+                <p class="puntos--usuario"> {{Auth::user()->puntos}}  </p>
+                <p class="puesto--usuario"> </p>
+            </div>
+        </article>
+        @endsection

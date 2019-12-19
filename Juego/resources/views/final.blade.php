@@ -11,8 +11,8 @@
             Tus puntos: {{session()->get('puntosPartida')}}
         </h4>
         <br>
-        <a href="/juego?tipo=clasico" class="volverJugar"> Volver a jugar </a>
-    </ul>
+            <a href="/juego?tipo=clasico" class="volverJugar"> Volver a jugar </a>
+        </ul>
       
     </form>
 </div>

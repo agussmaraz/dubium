@@ -150,8 +150,9 @@ body {
     padding-left: 35px;
     padding-right: 35px;
     border: solid white;
-    background-color: #D85F75;
+    background-color: #D88E4E;
     color: white;
+    margin-left: 40px;
     font-size: 30px;
     font-weight: bold;
     -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
@@ -355,7 +356,7 @@ body {
     justify-content: center;
     border-radius: 30px;
     padding: 1em;
-    width: 80%;
+    width: 60%;
     background-color: #694872;
 }
 .subtitulos--crea1{
@@ -472,6 +473,7 @@ body {
     color: white;
     background-color: #694872;
     width: 40%;
+    height: 20%;
     margin: 0 auto;
     padding: 10px;
     border-radius: 30px;
@@ -934,6 +936,19 @@ body {
 .crud-admin {
     margin-top: 1em;
 }
+.eliminarPreg {
+    background-color: transparent;
+    border: 0;
+}
+.eliminarAdmin{
+    background-color: transparent;
+    border: 0;
+}
+.editarAdmin {
+    background-color: transparent;
+    border: 0;
+
+}
 .e-crud-admin {
     color: #A0D8C8;
 }
@@ -972,6 +987,7 @@ body {
 .icono {
     font-size: 25px;
     margin-left: 3px;
+    color: white !important;
 }
 .nuevo {
     background-color: #FFD906;
@@ -1145,7 +1161,7 @@ body {
         justify-content: center;
         border-radius: 30px;
         padding: 1em;
-        width: 80%;
+        width: 50%;
         background-color: #694872;
         transform: translate(50% -50%);
     }
