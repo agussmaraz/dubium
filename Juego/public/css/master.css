@@ -181,7 +181,7 @@ body {
 .p--registro {
     font-size: 3em;
     margin-bottom: 1em;
-    margin-top: 1em;
+    margin-top: 0.5em;
     color: #D88E4E;
     text-align: center;
 }
@@ -193,12 +193,14 @@ body {
     flex-direction: column;
     overflow: hidden;
     background-color: #694872;
-    margin: 3em auto;
+    /* margin: 3em auto; */
+    /* padding: 0; */
 }
 .form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* width: 10%; */
 } 
 .in--regis{
     width: 250px;
@@ -208,7 +210,7 @@ body {
 }
 .sub--texto{
     color: white;
-    margin-top: 15px;
+    /* margin-top: 15px; */
     margin-bottom: 10px;
     font-size: 1.7em;
 }
@@ -258,6 +260,18 @@ body {
 }
 .cuenta {
     text-align: center;
+}
+.btn-google {
+    background-color: #4285F4;;
+    padding: 5px;
+    border-radius: 8px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.btn-google:hover {
+    text-decoration: none;
+    color: white;
 }
 /* -----------Login-------------- */
 .errores {
@@ -985,7 +999,7 @@ body {
     border-radius: 8px;
 }
 .icono {
-    font-size: 25px;
+    font-size: 16px;
     margin-left: 3px;
     color: white !important;
 }

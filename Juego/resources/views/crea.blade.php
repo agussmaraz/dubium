@@ -5,7 +5,7 @@
         @if ($errors)
         <ul class="errors">
             @foreach ($errors->all() as $error)
-                <li>{{$error}}</li>
+            <li>{{$error}}</li>
             @endforeach
         </ul>
         @endif
@@ -61,8 +61,8 @@
                     <td> <div class="aprobado">Aprobada</div></td>
                     @endif
                     <td>
-                        <a href="editar/{{$pregunta->id}}"><i class="fas fa-edit"></i></a>    
-                        <button class="eliminarPreg" id="{{$pregunta->id}}"><i class="fas fa-trash"></i></button>
+                        <a href="editar/{{$pregunta->id}}"><i class="fas fa-edit icono"></i></a>    
+                        <button class="eliminarPreg" id="{{$pregunta->id}}"><i class="fas fa-trash icono"></i></button>
                     </td>
                 </tr>
                 @endforeach
