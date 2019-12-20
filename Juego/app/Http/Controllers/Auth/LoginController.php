@@ -33,9 +33,7 @@ class LoginController extends Controller
         // return $user->id;
         // dd($user);
         $finduser = User::where('google_id', $user->id)->first();
-
         if ($finduser) {
-
             Auth::login($finduser);
             return redirect('/home');
         } else {
@@ -44,12 +42,8 @@ class LoginController extends Controller
                 'email' => $user->email,
                 'google_id' => $user->id,
 
-                // 'avatar' => $user->picture,
             ]);
-            // dd($user->id);
-            $newUser->save();
             Auth::login($newUser);
-            // dd($newUser);
 
             return redirect()->back();
         }
